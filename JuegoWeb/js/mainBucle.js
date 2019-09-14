@@ -23,11 +23,11 @@ var mainBucle = {
 
     },
     actualizar: function(registroTemporal){
+      teclado.reiniciar();
       mainBucle.aps++;
     },
 
     dibujar: function(registroTemporal){
       mainBucle.fps++;
-      var r = new Rectangulo(10,10,100,100);
     }
 };
