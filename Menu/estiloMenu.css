@@ -1,0 +1,26 @@
+body{
+  background-color: #303641;
+}
+
+@font-face {
+  font-family: 'Games';
+  font-size: Normal;
+  src: url(GameofThrones.ttf);
+
+}
+
+.titulo{
+  text-align: center;
+  color: #f005f0;
+  font-size: 100%;
+  font-family: 'Games';
+}
+
+.Jugar{
+align-text:center;
+border-radius: 86px 87px 87px 79px;
+-moz-border-radius: 86px 87px 87px 79px;
+-webkit-border-radius: 86px 87px 87px 79px;
+border: 0px solid #000000;
+color: #f005f0;
+}

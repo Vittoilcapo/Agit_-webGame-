@@ -1,20 +1,66 @@
-<!DOCTYPE html>
+<?php
+
+//Va a obtener todo lo relacionado a la tienda que esta en la base de datos
+  include("connectBD.php");
+  session_start();
+  $Sentencia_sql="select * from armas_tienda ;";
+  $resultado = conectar($Sentencia_sql);
+
+  $numero = mysqli_num_rows($resultado);
+  $numeroColumnas = mysqli_num_fields($resultado);
+
+  for ($i = 0; $i <= $numero; $i++) { //obtiene solo la columna imagen arma y precio asignandolo a un array para poder acceder a el despues
+    $contenido_tienda = mysqli_fetch_array($resultado);
+    for ($a = 0; $a < $numeroColumnas; $a++) {
+    $Armas[$i][$a] = $contenido_tienda[$a];
+    //$precio[$i] = $contenido_tienda["armas_precio"];
+  }
+
+  }
+
+  $_SESSION["imgEspada"]= $Armas[0][5]; //en Armas[0] esta img/upg_sword.png y asi con los otrs
+  $_SESSION["imgHacha"]= $Armas[1][5];
+  $_SESSION["imgLanza"]= $Armas[2][5];
+  $_SESSION["imgMartillo"]= $Armas[3][5];
+
+  $_SESSION["precioEspada"]= $Armas[0][6];
+  $_SESSION["precioHacha"]=$Armas[1][6];
+  $_SESSION["precioLanza"]=$Armas[2][6];
+  $_SESSION["precioMartillo"]=$Armas[3][6];
+
+ ?>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Tienda</title>
     <link rel="stylesheet" href="estilo-tienda.css">
   </head>
+  <header> <h2></h2> </header>
   <body>
     <div class="titulo">
       <img src="img/letra.png">
     </div>
     <div class="contenedor">
-      <div class="grid-item"><img src="img/axe.png"> <div style="text-align: center"> <h3>500</h3> </div> </div>
-      <div class="grid-item"><img src="img/hammer.png"> <div style="text-align: center"> <h3>1000</h3> </div></div>
-      <div class="grid-item"><img src="img/upg_sword.png"> <div style="text-align: center"> <h3>300</h3> </div></div>
-      <div class="grid-item"><img src="img/wand.png"> <div style="text-align: center"> <h3>700</h3> </div></div>
+      <div class="grid-item"><img src= <?php echo $_SESSION["imgHacha"] ?>> <div style="text-align: center"> <h3><? echo $_SESSION["precioHacha"] ?></h3> </div> </div>
+      <div class="grid-item"><img src=<?php echo $_SESSION["imgMartillo"] ?>> <div style="text-align: center"> <h3><? echo $_SESSION["precioMartillo"] ?></h3> </div></div>
+      <div class="grid-item"><img src=<?php echo $_SESSION["imgEspada"] ?>> <div style="text-align: center"> <h3><? echo $_SESSION["precioEspada"] ?></h3> </div></div>
+      <div class="grid-item"><img src=<?php echo $_SESSION["imgLanza"] ?>> <div style="text-align: center"> <h3><? echo $_SESSION["precioLanza"] ?></h3> </div></div>
     </div>
+
+    <form class= "compras" method="post" action="verArma.php" >
+    <div class="checkboxes">
+       <div class ="hacha"> <input type="radio" name="armas" value="hacha"></div>
+
+       <div class="martillo"><input type="radio" name="armas" value="martillo"></div>
+
+       <div class="espada"><input type="radio" name="armas" value="espada"></div>
+
+       <div class="lanza"><input type="radio" name="armas" value="lanza"></div>
+
+    </div>
+    <div class= "comprar" style="text-align: center"><input type="submit" value="Ver"></div>
+    </form>
+
   </body>
-  <footer><a href="/JuegoWeb/login/menu.html"><img src="img/atras.png"> </a></footer>
+  <footer><a href="/JuegoWeb/login/menu.html"> </a></footer>
 </html>
