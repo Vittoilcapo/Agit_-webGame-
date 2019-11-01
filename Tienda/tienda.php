@@ -49,13 +49,13 @@
 
     <form class= "compras" method="post" action="verArma.php" >
     <div class="checkboxes">
-       <div class ="hacha"> <input type="radio" name="armas" value="hacha"></div>
+       <div class ="hacha"> <input type="radio" name="armas" value="Hacha"></div>
 
-       <div class="martillo"><input type="radio" name="armas" value="martillo"></div>
+       <div class="martillo"><input type="radio" name="armas" value="Martillo"></div>
 
-       <div class="espada"><input type="radio" name="armas" value="espada"></div>
+       <div class="espada"><input type="radio" name="armas" value="Espada"></div>
 
-       <div class="lanza"><input type="radio" name="armas" value="lanza"></div>
+       <div class="lanza"><input type="radio" name="armas" value="Lanza"></div>
 
     </div>
     <div class= "comprar" style="text-align: center"><input type="submit" value="Ver"></div>
