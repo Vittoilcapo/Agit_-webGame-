@@ -18,7 +18,7 @@
             <i class="material-icons lock">lock</i> Login
         </div>
 
-        <form>
+        <form method="post" action="ValidarLogin.php">
             <div class="input">
                 <div class="input-addon">
                     <i class="material-icons">face</i>

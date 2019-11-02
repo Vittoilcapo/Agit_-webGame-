@@ -6,7 +6,7 @@ $_SESSION['password']=$_REQUEST['campo_password_html'];
 $conexion=mysqli_connect("localhost","root","root") or
 die("problema en la conexion");
 
-Mysqli_select_db($conexion,"php") or die("Error en seleccion de la base de datos");
+Mysqli_select_db($conexion,"juego") or die("Error en seleccion de la base de datos");
 
 
 $sql=" select mail from usuario where mail='".$_REQUEST['campo_mail_html']."' and password='".$_REQUEST['campo_password_html']."';";
