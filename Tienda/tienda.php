@@ -28,6 +28,7 @@
   $_SESSION["precioLanza"]=$Armas[2][6];
   $_SESSION["precioMartillo"]=$Armas[3][6];
 
+  
  ?>
 <html lang="en" dir="ltr">
   <head>
@@ -35,7 +36,6 @@
     <title>Tienda</title>
     <link rel="stylesheet" href="estilo-tienda.css">
   </head>
-  <header> <h2></h2> </header>
   <body>
     <div class="titulo">
       <img src="img/letra.png">

@@ -1,7 +1,7 @@
 <?php
 
 //Va a obtener todo lo relacionado a la tienda que esta en la base de datos
-  include("connectBD.php");
+  include_once("connectBD.php");
   session_start();
   $Sentencia_sql="select armas_tienda_agilidad, armas_tienda_fuerza, armas_tienda_velocidad from armas_tienda where armas_tienda_nombre = '".$_REQUEST["armas"]."';";
   $resultado = conectar($Sentencia_sql);
@@ -14,6 +14,7 @@
        $_SESSION["Agilidad"] = $estadisiticas["armas_tienda_agilidad"];
      }
 
+    $_SESSION["nombre_arma"] = $_REQUEST["armas"];
  ?>
 <html lang="en" dir="ltr">
   <head>
@@ -64,7 +65,9 @@
           </table>
           </div>
           </div>
-
+          <div>
+            <button class="enlace" role="link" onclick="location.href='InsertArmasInventario.php'">Comprar</button>
+         </div>
 
   </body>
   <footer><a href="/JuegoWeb/login/menu.html"> </a></footer>
