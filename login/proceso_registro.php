@@ -10,32 +10,37 @@ $clave = $_SESSION['clave'];
 $usuario = $_SESSION['usuario'];
 $mail = $_SESSION['mailIn'];
 
-
+// verificamos que el nombre del usuario contenga mas de 5 caracteres
 if(strlen($usuario) < 5){
       $error_clave = 'El usuario debe tener al menos 5 caracteres';
       $_SESSION['error']=$error_clave;
       header("Location: registrarPrincipal.php");
 
-
+// verificamos que la password que se ingresa sea mayor a 6 caracteres
   }else if(strlen($clave) < 6){
       $error_clave = 'La clave debe tener al menos 6 caracteres';
       $_SESSION['error']=$error_clave;
       header("Location: registrarPrincipal.php");
 
+// verificamos que la password que se ingresa sea menor a 16 caracteres
    }else if(strlen($clave) > 16){
       $error_clave = "La clave no puede tener más de 16 caracteres";
       $_SESSION['error']=$error_clave;
       header("Location: registrarPrincipal.php");
 
+// verificamos que la password contenga al menos una letra minuscula
    }else if (!preg_match('`[a-z]`',$clave)){
       $error_clave = "La clave debe tener al menos una letra minúscula";
       $_SESSION['error']=$error_clave;
       header("Location: registrarPrincipal.php");
 
+// verificamos que la password tenga al menos un caracter numerico
    }else if (!preg_match('`[0-9]`',$clave)){
       $error_clave = "La clave debe tener al menos un caracter numérico";
       $_SESSION['error']=$error_clave;
       header("Location: registrarPrincipal.php");
+
+// is_valid_email es una funcion declarada abajo que sirve para ver si el mail tiene los caracteres correctos
     }else if (is_valid_email($mail) != true){
          $error_clave = "El mail no es valido";
          $_SESSION['error']=$error_clave;
