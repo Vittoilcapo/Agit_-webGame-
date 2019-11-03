@@ -71,7 +71,7 @@ if ($existe==true){
   $sql= "insert into usuario (nombre, password, email) values ('".$usuario."','".$clave."','".$mail."');";
   if (mysqli_query($conexion, $sql)) {
         echo "Registrado correctamente";
-        header('Location: entradaPrincipal.php');
+        header('Location: seleccionbruto.php');
   }else{
         echo "Error: " . "<br>" . "Error al registrarte";
   }
