@@ -1,4 +1,7 @@
 <?php
+//voy a comprobar que todos los check box esten seleccionados
+if (isset($_POST['armas'])) {
+
 
 //Va a obtener todo lo relacionado a la tienda que esta en la base de datos
   include_once("connectBD.php");
@@ -41,12 +44,20 @@
         ?>> <div style="text-align: center"> <h3><?php
         if ($_REQUEST["armas"] == "Hacha"){
           echo $_SESSION["precioHacha"];
+          $precio = $_SESSION["precioHacha"];
+
         }elseif ($_REQUEST["armas"] == "Martillo") {
           echo $_SESSION["precioMartillo"];
+          $precio = $_SESSION["precioMartillo"];
+
         }elseif ($_REQUEST["armas"] == "Espada") {
           echo $_SESSION["precioEspada"];
+          $precio = $_SESSION["precioEspada"];
+
         }else {
           echo $_SESSION["precioLanza"];
+          $precio = $_SESSION["precioLanza"];
+
         }
           ?></h3> </div> </div>
 
@@ -66,9 +77,13 @@
           </div>
           </div>
           <div>
-            <button class="enlace" role="link" onclick="location.href='InsertArmasInventario.php'">Comprar</button>
+            <button class="enlace" role="link" onclick="location.href='InsertArmasInventario.php?precio='+<?php echo $precio ?>">Comprar</button>
          </div>
 
   </body>
   <footer><a href="/JuegoWeb/login/menu.html"> </a></footer>
 </html>
+<?php }else {
+  echo "<script language=JavaScript>alert('Debe de seleccionar un arma.');</script>";
+
+} ?>

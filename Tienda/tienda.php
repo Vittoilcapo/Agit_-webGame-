@@ -2,6 +2,7 @@
 
 //Va a obtener todo lo relacionado a la tienda que esta en la base de datos
   include("connectBD.php");
+  require 'usuario.php';
   session_start();
   $Sentencia_sql="select * from armas_tienda ;";
   $resultado = conectar($Sentencia_sql);
@@ -28,7 +29,7 @@
   $_SESSION["precioLanza"]=$Armas[2][6];
   $_SESSION["precioMartillo"]=$Armas[3][6];
 
-  
+
  ?>
 <html lang="en" dir="ltr">
   <head>
@@ -36,10 +37,20 @@
     <title>Tienda</title>
     <link rel="stylesheet" href="estilo-tienda.css">
   </head>
+    <header>
+      <div class="titulo">
+        <img src="img/letra.png">
+      </div>
+
+  </header>
   <body>
-    <div class="titulo">
-      <img src="img/letra.png">
+    <div class="precio">
+      <h2>
+      <?php $user = new usuario;
+      $user-> setUsuario();
+      echo $user->usuario_dinero;?></h2>
     </div>
+
     <div class="contenedor">
       <div class="grid-item"><img src= <?php echo $_SESSION["imgHacha"] ?>> <div style="text-align: center"> <h3><? echo $_SESSION["precioHacha"] ?></h3> </div> </div>
       <div class="grid-item"><img src=<?php echo $_SESSION["imgMartillo"] ?>> <div style="text-align: center"> <h3><? echo $_SESSION["precioMartillo"] ?></h3> </div></div>
@@ -58,7 +69,7 @@
        <div class="lanza"><input type="radio" name="armas" value="Lanza"></div>
 
     </div>
-    <div class= "comprar" style="text-align: center"><input type="submit" value="Ver"></div>
+    <div class= "comprar" style="text-align: center"><input type="submit" name="comprar" value="Ver"></div>
     </form>
 
   </body>
