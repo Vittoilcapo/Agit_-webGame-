@@ -15,6 +15,11 @@
 
         <input type="submit" value="Jugar">
     </form>
+
+    <form class="Inventario" method="post" action="/Juego/Tienda/verInventario.php">
+
+        <input type="submit" value="Inventario">
+    </form>
     </div>
 
 

@@ -16,7 +16,13 @@
 
   $precioArma = $_GET['precio'];
 
-  if ($dinero < $precioArma){
+//verifica que no tenga el arma repetida
+$Sentencia_sql="select inventario_armas_nombre from inventario_armas where inventario_id =".$inventario_id." and inventario_armas_nombre ='".$arma."';";
+$resultado = conectar($Sentencia_sql);
+
+if(mysqli_num_rows($resultado) > 0){
+  echo "usted ya tiene esa arma";
+}else if ($dinero < $precioArma){
     echo "usted no tiene suficiente dinero para comprar este Item";
   }else{
   $sql="insert inventario_armas values ('".$inventario_id."','".$arma."','".$velocidad."','".$fuerza."','".$agilidad."')";
