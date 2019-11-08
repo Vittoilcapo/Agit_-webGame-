@@ -5,7 +5,12 @@
   <head>
     <title>Seleccionar campeones</title>
 
-<form method="get" action="pruebabruto.php"
+<form method="get" action="pruebabruto.php">
+
+ingrese nombre de usuario
+<input type="text" name="nombreusuario">
+<br>
+<br>
 <article>
     <div id="boxeador">
           <img src="img\boxeador.png" width="250" height="200" alt="foto boxeador"/>
@@ -34,6 +39,8 @@
 
 
 </article>
+
+
 
 
 
