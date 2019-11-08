@@ -15,3 +15,83 @@
    height: 20px;
    text-align: center;
  }
+
+
+
+.btnJugar{
+  margin-top: 10px;
+  padding: 6px 25px;
+  background: #373E4A;
+  color: #ffcc00;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.btnAyuda{
+  margin-top: 10px;
+  padding: 6px 25px;
+  background: #373E4A;
+  color: #ffcc00;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.btnTienda{
+  margin-top: 10px;
+  padding: 6px 25px;
+  background: #373E4A;
+  color: #ffcc00;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.btnSalir{
+  margin-top: 10px;
+  padding: 6px 25px;
+  background: #373E4A;
+  color: #ffcc00;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #F2F2F2;
+  background-color: #303641;
+}
+
+.contenedor_menu{
+  background-color: #cca300;
+  position: relative;
+  top: 20%;
+  margin: auto;
+  bottom: -160px;
+
+  width: 200px;
+  height: 315px;
+  border-radius: 0.35em;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.title {
+    position: relative;
+    background-color: #ffcc00;
+    width: 100%;
+    padding: 20px 0px;
+    border-radius: 0.35em;
+    font-size: 22px;
+    color: #373b3d;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
