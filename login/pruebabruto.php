@@ -1,16 +1,7 @@
 <?php
 session_start();
+$mail = $_SESSION['mailIn'];
 
-
-if (trim($_GET['nombreusuario']=="")) {
-  echo "falta asignar nombre a su luchador";
-?>
-<!DOCTYPE html>
-<br>
-<br>
-<a href="seleccionbruto.php"> atras </a>
-<?php
-}else{
 
 if ( isset( $_GET['boxeadorcomprar'] )){
 $comprar = 1;
@@ -22,41 +13,15 @@ $comprar = 2;
 $comprar = 3;
 
 }
-echo $comprar;
-$usuario =$_GET['nombreusuario'];
-echo $usuario;
-}
-
-
 $conexion=mysqli_connect("localhost","root","root")or
 die ("Problema con la conexion");
 mysqli_select_db($conexion,"juego");
+$sql="update `juego`.`usuario` SET `macaco_id` = '$comprar' WHERE (`usuario_mail` = '$mail');";
 
-$sql=" select usuario_nombre from usuario where usuario_nombre='".$usuario."';";
-$existeUsuario=mysqli_query($conexion,$sql) or die ("problema en el select".mysqli_error($conexion));
-
-$existe=false;
-
-while($exist=mysqli_fetch_array($existeUsuario)){
-  $existe=true;
-}
-
-if ($existe==true){
-
-  $error_clave = "El usuario ya esta registardo";
-  $_SESSION['error']=$error_clave;
-  header('Location: seleccionbruto.php');
-
+if (mysqli_query($conexion, $sql)) {
+      echo "Registrado correctamente";
+      header('Location: menu.html');
 }else{
-  $sql= "insert into usuario values ('".$usuario."','".$clave."','".$mail."');"; //aca va a haber quilombo
-  if (mysqli_query($conexion, $sql)) {
-        echo "Registrado correctamente";
-        header('Location: seleccionbruto.php');
-  }else{
-        echo "Error: " . "<br>" . "Error al registrarte";
-  }
-  mysqli_close($conexion);
-
+      echo "Error: " . "<br>" . "Error al registrarte";
 }
-
   ?>

@@ -48,11 +48,11 @@ if(strlen($usuario) < 5){
 }else{
 
 
-$conexion=mysqli_connect("localhost","vitto1","hola")or
+$conexion=mysqli_connect("localhost","root","root")or
 die ("Problema con la conexion");
 mysqli_select_db($conexion,"juego");
 
-$sql=" select email from usuario where email='".$mail."';";
+$sql=" select usuario_mail from usuario where usuario_mail='".$mail."';";
 $existeUsuario=mysqli_query($conexion,$sql) or die ("problema en el select".mysqli_error($conexion));
 
 $existe=false;
@@ -68,7 +68,9 @@ if ($existe==true){
   header('Location: registrarPrincipal.php');
 
 }else{
-  $sql= "insert into usuario (nombre, password, email) values ('".$usuario."','".$clave."','".$mail."');";
+  $conexion=mysqli_connect("localhost","root","root","juego")or
+  die ("Problema con la conexion");
+  $sql= "insert into usuario (usuario_id, usuario_nombre, usuario_mail, usuario_password) values (2,'" . $usuario . "','" . $mail . "','" . $clave. "');";
   if (mysqli_query($conexion, $sql)) {
         echo "Registrado correctamente";
         header('Location: seleccionbruto.php');

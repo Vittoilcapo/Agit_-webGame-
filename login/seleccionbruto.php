@@ -7,15 +7,15 @@
 
 <form method="get" action="pruebabruto.php">
 
-ingrese nombre de usuario
-<input type="text" name="nombreusuario">
+
+
 <br>
 <br>
 <article>
     <div id="boxeador">
           <img src="img\boxeador.png" width="250" height="200" alt="foto boxeador"/>
           <br>
-          <input id="botonboxeador"  type="submit"  name="boxeadorcomprar" value="comprar">
+          <input id="botonboxeador"  type="submit"  name="boxeadorcomprar" value="seleccionar">
 
                 </div>
 
@@ -24,7 +24,7 @@ ingrese nombre de usuario
     <div id="caballero">
           <img src="img\caballero.gif" width="250" height="200" alt="pacote"/>
           <br>
-          <input id="botoncaballero"  type="submit"  name="caballerocomprar" value="comprar">
+          <input id="botoncaballero"  type="submit"  name="caballerocomprar" value="seleccionar">
 
                 </div>
 
@@ -33,7 +33,7 @@ ingrese nombre de usuario
     <div id="raccoon">
           <img src="img\raccoon.gif" width="250" height="200" alt="pacote"/>
           <br>
-          <input id="botonraccoon"  type="submit"  name="raccooncomprar" value="comprar">
+          <input id="botonraccoon"  type="submit"  name="raccooncomprar" value="seleccionar">
 
                 </div>
 
