@@ -62,6 +62,18 @@
   border-radius: 3px;
 }
 
+.btnInventario{
+  margin-top: 10px;
+  padding: 6px 25px;
+  background: #373E4A;
+  color: #ffcc00;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+
 
 body{
   margin: 0;
@@ -79,7 +91,7 @@ body{
   bottom: -160px;
 
   width: 200px;
-  height: 315px;
+  height: 355px;
   border-radius: 0.35em;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
   text-align: center;

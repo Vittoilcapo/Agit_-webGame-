@@ -39,11 +39,11 @@
         </form>
 
         <div class="forgot-password">
-            <a href="#">Forgot your password? NO ANDA</a>
+            <a href="#">¿Olvidaste tu contraseña?</a>
         </div>
 
         <div class="register">
-            No tienes una cuenta aun?
+            ¿No tienes una cuenta aún?
             <a href="registrarPrincipal.php"><button id="register-link">Registrarse</button></a>
         </div>
     </div>
