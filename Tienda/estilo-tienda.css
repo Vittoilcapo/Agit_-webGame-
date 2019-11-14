@@ -9,11 +9,16 @@ body{
 
 }
 .precio{
+  weight: 500px;
   text-align: right;
   font-family: 'Games';
   font-size: Normal;
   position: relative;
 
+}
+.coinimagen{
+  text-align: right;
+  position: relative;
 }
 
 .titulo{

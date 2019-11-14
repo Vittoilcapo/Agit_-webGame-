@@ -41,15 +41,18 @@
       <div class="titulo">
         <img src="img/letra.png">
       </div>
+      <div class="precio">
+
+        <h2>
+        <?php $user = new usuario;
+        $user-> setUsuario();
+        echo $user->usuario_dinero;?>
+        <div class="coinimagen"><img src="img/moneda.png" width="30" height="30"></div>
+      </h2>
+      </div>
 
   </header>
   <body>
-    <div class="precio">
-      <h2>
-      <?php $user = new usuario;
-      $user-> setUsuario();
-      echo $user->usuario_dinero;?></h2>
-    </div>
 
     <div class="contenedor">
       <div class="grid-item"><img src= <?php echo $_SESSION["imgHacha"] ?>> <div style="text-align: center"> <h3><? echo $_SESSION["precioHacha"] ?></h3> </div> </div>
@@ -73,5 +76,5 @@
     </form>
 
   </body>
-  <footer><a href="/JuegoWeb/login/menu.html"> </a></footer>
+  <footer><a href="/Juego/Menu/menu.html"> </a></footer>
 </html>

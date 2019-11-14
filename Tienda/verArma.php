@@ -84,6 +84,7 @@ if (isset($_POST['armas'])) {
   <footer><a href="/JuegoWeb/login/menu.html"> </a></footer>
 </html>
 <?php }else {
-  echo "<script language=JavaScript>alert('Debe de seleccionar un arma.');</script>";
+
+  echo "<script language=JavaScript> alert('Debe de seleccionar un arma.'); window.location.href = 'tienda.php';</script>";
 
 } ?>
