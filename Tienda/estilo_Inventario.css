@@ -1,5 +1,5 @@
 body{
-  background-color: #303641;
+background-color: #303641;
 }
 
 .Armas{
@@ -7,7 +7,6 @@ body{
   position: relative;
   top: 10px;
   left: 10px;
-  background-color: #303641;
   width: 20%;
   height: 10%;
   float: left;

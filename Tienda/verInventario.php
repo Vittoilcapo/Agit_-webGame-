@@ -6,6 +6,4 @@ $inventario = new InventarioArmas;
 $inventario-> obtenerInventario(1);
 
 
-
-
  ?>

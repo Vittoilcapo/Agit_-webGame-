@@ -16,7 +16,7 @@ class InventarioArmas{
 
 
     ?>
-    <link rel="stylesheet" href="estilo_inventario.css">
+    <link rel="stylesheet" href="estilo_Inventario.css">
     <table class="grid-itemEstadisticas">
     <tr>
       <th>Nombre</th>
