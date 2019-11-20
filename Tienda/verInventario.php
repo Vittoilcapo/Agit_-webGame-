@@ -1,9 +1,9 @@
 <?php
-require 'inventarioUsuario.php';
-require 'usuario.php';
+require_once 'inventarioUsuario.php';
+require_once('usuario.php');
 
-$user = new usuario;
-$id_inventario = $user->inventario_id;
+$usuario2 = new usuario;
+$id_inventario = $usuario2->inventario_id;
 
 
 $inventario = new InventarioArmas;

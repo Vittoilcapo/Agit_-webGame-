@@ -68,12 +68,29 @@ if ($existe==true){
   header('Location: registrarPrincipal.php');
 
 }else{
+  include_once 'connectBD.php';
+
+  $sql = "insert into inventario values();";
+  $resultado = conectar($sql); // inserta un inventario nuevo para el usuario
+  $sql = "select max(inventario_id) AS id from inventario;"; // obtiene que inventario se asigno
+  $resultado = conectar($sql);
+
+
+  while($result=mysqli_fetch_array($resultado)){
+
+    $id_user = $result["id"];
+
+  }
+
+
+
   $conexion=mysqli_connect("localhost","root","root","juego")or
   die ("Problema con la conexion");
-  $sql= "insert into usuario (usuario_id, usuario_nombre, usuario_mail, usuario_password) values (2,'" . $usuario . "','" . $mail . "','" . $clave. "');";
-  if (mysqli_query($conexion, $sql)) {
+  $sql= "insert into usuario (usuario_id, usuario_dinero, usuario_nivel, inventario_id, usuario_nombre, usuario_mail, usuario_password) values (".$id_user.", 100 ,1 ,".$id_user.",'" . $usuario . "','" . $mail . "','" . $clave. "');";
+  if (mysqli_query($conexion, $sql)) { //EL NIVEL VA A SER 1 Y EL DINERO 100 AL PRINCIPIO
         echo "Registrado correctamente";
         header('Location: seleccionbruto.php');
+        //hacer sentencias mysql para obtener que id usario se le puso, para despues crear el inventario del usuario
   }else{
         echo "Error: " . "<br>" . "Error al registrarte";
   }
