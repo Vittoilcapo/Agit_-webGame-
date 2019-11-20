@@ -7,9 +7,9 @@ class usuario{
   public $inventario_id;
 
 
-  function setUsuario(){
+  function setUsuario($usuario_id){
   include_once("connectBD.php");
-   $Sentencia_sql="select usuario_id, usuario_dinero, usuario_nivel, inventario_id from usuario where usuario_id = 1 ;";
+   $Sentencia_sql="select usuario_id, usuario_dinero, usuario_nivel, inventario_id from usuario where usuario_id =".$usuario_id.";";
    $resultado = conectar($Sentencia_sql);
 
   while ($usuario = mysqli_fetch_array($resultado)){

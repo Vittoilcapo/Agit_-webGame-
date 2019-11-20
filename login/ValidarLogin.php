@@ -1,25 +1,26 @@
 <?php
 session_start();
+require(__DIR__.'/../../Juego/Tienda/usuario.php');
+include_once("connectBD.php");
 $_SESSION['usuario']=$_REQUEST['campo_mail_html'];
 $_SESSION['password']=$_REQUEST['campo_password_html'];
 
-$conexion=mysqli_connect("localhost","root","root") or
-die("problema en la conexion");
+$sql=" select usuario_mail, usuario_id from usuario where usuario_mail='".$_REQUEST['campo_mail_html']."' and usuario_password='".$_REQUEST['campo_password_html']."';";
 
-Mysqli_select_db($conexion,"juego") or die("Error en seleccion de la base de datos");
+$resultado = conectar($sql);
 
-
-$sql=" select mail from usuario where mail='".$_REQUEST['campo_mail_html']."' and password='".$_REQUEST['campo_password_html']."';";
-
-$registro=mysqli_query($conexion,$sql) or die ("problema en el select".mysqli_error($conexion));
 $exito=false;
-while($reg=mysqli_fetch_array($registro)){
+while($reg=mysqli_fetch_array($resultado)){
   $exito=true;
+  $usuario_id = $reg["usuario_id"];
 }
 
 if ($exito==true){
 
-  INCLUDE_ONCE 'menu.html';
+  $user = new usuario;
+  $user-> setUsuario($usuario_id);
+
+header ("location: /Juego/Menu/menu.html");
 
 
 

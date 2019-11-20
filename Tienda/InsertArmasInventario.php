@@ -4,7 +4,7 @@
   session_start();
   require 'usuario.php';
   $user = new usuario;
-  $user-> setUsuario(); //esta funcion luego va a tener que ir cuando se crean los usuarios
+   //esta funcion luego va a tener que ir cuando se crean los usuarios
 
   $inventario_id = $user->inventario_id;
   $dinero = $user->usuario_dinero;
