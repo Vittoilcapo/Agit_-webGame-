@@ -12,7 +12,7 @@ $resultado = conectar2($sql);
 $exito=false;
 while($reg=mysqli_fetch_array($resultado)){
   $exito=true;
-  $usuario_id = $reg["usuario_id"];
+  $_SESSION['usuario_id'] = $reg["usuario_id"];
 
 }
 
@@ -20,7 +20,7 @@ if ($exito==true){
 
   require_once('C:\xampp\htdocs\Juego\Tienda\usuario.php');
   $user = new usuario;
-  $user->setUsuario();
+  $user->setUsuario($_SESSION['usuario_id']);
 
   header ("location: /Juego/Menu/menu.html");
 

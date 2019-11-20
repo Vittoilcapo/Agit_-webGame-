@@ -45,8 +45,9 @@
 
         <h2>
         <?php
-        require('usuario.php');
+        require_once('usuario.php');
         $usuario = new usuario;
+        $usuario->setUsuario($_SESSION['usuario_id']);
         echo $usuario->usuario_dinero;
         ?>
 

@@ -1,9 +1,12 @@
 <?php
-require_once 'inventarioUsuario.php';
-require_once('usuario.php');
+session_start();
+require 'inventarioUsuario.php';
+require('usuario.php');
 
-$usuario2 = new usuario;
-$id_inventario = $usuario2->inventario_id;
+$usuario = new usuario;
+$usuario->setUsuario($_SESSION['usuario_id']);
+$id_inventario = $usuario->inventario_id;
+
 
 
 $inventario = new InventarioArmas;
