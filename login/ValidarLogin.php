@@ -6,7 +6,7 @@ $_SESSION['usuario']=$_REQUEST['campo_mail_html'];
 $_SESSION['password']=$_REQUEST['campo_password_html'];
 
 
-$conexion=mysqli_connect("localhost","root","juanmanuel2000") or
+$conexion=mysqli_connect("localhost","root","root","juego") or
 die("problema en la conexion");
 
 $sql="select usuario_mail, usuario_id from usuario where usuario_mail='".$_REQUEST['campo_mail_html']."' and usuario_password='".$_REQUEST['campo_password_html']."';";
