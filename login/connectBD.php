@@ -1,5 +1,5 @@
 <?php
-function conectar($sql){
+function conectar2($sql){
 $conexion = mysqli_connect("localhost:3306","root","root") or die ("Problema con la conexion");
 mysqli_select_db($conexion,"juego");
 
