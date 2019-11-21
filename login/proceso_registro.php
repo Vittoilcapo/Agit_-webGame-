@@ -68,7 +68,7 @@ if ($existe==true){
   header('Location: registrarPrincipal.php');
 
 }else{
-  include_once 'connectBD.php';
+  include_once ('../Tienda/connectBD.php');
 
   $sql = "insert into inventario values();";
   $resultado = conectar($sql); // inserta un inventario nuevo para el usuario

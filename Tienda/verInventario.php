@@ -1,11 +1,11 @@
 <?php
+include_once('usuario.php');
 session_start();
-require 'inventarioUsuario.php';
-require('usuario.php');
+require_once 'inventarioUsuario.php';
 
-$usuario = new usuario;
-$usuario->setUsuario($_SESSION['usuario_id']);
-$id_inventario = $usuario->inventario_id;
+
+$class = $_SESSION['ClaseUsuario'];
+$id_inventario = $class->inventario_id;
 
 
 

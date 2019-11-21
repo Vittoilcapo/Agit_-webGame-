@@ -1,4 +1,5 @@
 <?php
+include_once('../Tienda/usuario.php');
 session_start();
 $mail = $_SESSION['mailIn'];
 $fuerza = rand(1, 5);
@@ -28,7 +29,7 @@ $comprar = 3;
   //    echo "Error: " . "<br>" . "Error al registrarte";
 //}
 
-include_once("connectBD.php");
+include_once("../Tienda/connectBD.php");
 //$sql="update `juego`.`usuario` SET `macaco_id` = '$comprar' WHERE (`usuario_mail` = '$mail');";
 
 $sql="update `juego`.`usuario` SET `macaco_id` = '$comprar' WHERE (`usuario_mail` = '$mail');";
@@ -38,7 +39,7 @@ if ($resultado) {
       //$sql="update `juego`.`usuario` SET `macaco_id` = '$comprar' WHERE (`usuario_mail` = '$mail');";
       $sql="insert into `juego`.`estadisticas` (`usuario_mail`, `estadisticas_velocidad`, `estadisticas_fuerza`, `estadisticas_agilidad`) VALUES ('$mail', '$velocidad', '$fuerza', '$agilidad');";
       $resultado= conectar($sql);
-      header("Location:\juego-07-11\Menu\menu.html");
+      header("Location:/Juego/login/entradaPrincipal.php");
 
 }
 
