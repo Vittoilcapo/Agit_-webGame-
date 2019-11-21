@@ -74,7 +74,9 @@
        <div class="lanza"><input type="radio" name="armas" value="Lanza"></div>
 
     </div>
-    <div class= "comprar" style="text-align: center"><input type="submit" name="comprar" value="Ver"></div>
+    <div class= "comprar" style="text-align: center">
+    <input type="submit" name="comprar" value="Ver">
+    </div>
     </form>
 
   </body>
