@@ -28,7 +28,7 @@ $comprar = 3;
   //    echo "Error: " . "<br>" . "Error al registrarte";
 //}
 
-include_once("connectBD.php");
+include_once("../Tienda/connectBD.php");
 //$sql="update `juego`.`usuario` SET `macaco_id` = '$comprar' WHERE (`usuario_mail` = '$mail');";
 
 $sql="update `juego`.`usuario` SET `macaco_id` = '$comprar' WHERE (`usuario_mail` = '$mail');";

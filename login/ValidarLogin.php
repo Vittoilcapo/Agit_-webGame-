@@ -1,26 +1,27 @@
 <?php
 session_start();
-require_once(__DIR__.'/../../Juego/Tienda/usuario.php');
-include_once("connectBD.php");
+include_once('../Tienda/usuario.php');
+include_once("../Tienda/connectBD.php");
 $_SESSION['usuario']=$_REQUEST['campo_mail_html'];
 $_SESSION['password']=$_REQUEST['campo_password_html'];
 
 $sql="select usuario_mail, usuario_id from usuario where usuario_mail='".$_REQUEST['campo_mail_html']."' and usuario_password='".$_REQUEST['campo_password_html']."';";
 
-$resultado = conectar2($sql);
+$resultado = conectar($sql);
 
 $exito=false;
 while($reg=mysqli_fetch_array($resultado)){
   $exito=true;
-  $_SESSION['usuario_id'] = $reg["usuario_id"];
+  $usuario_id = $reg["usuario_id"];
 
 }
 
 if ($exito==true){
 
-  require_once('C:\xampp\htdocs\Juego\Tienda\usuario.php');
+  include_once('..\Tienda\usuario.php');
   $user = new usuario;
-  $user->setUsuario($_SESSION['usuario_id']);
+  $user->setUsuario($usuario_id);
+  $_SESSION['ClaseUsuario'] = $user;
 
   header ("location: /Juego/Menu/menu.html");
 

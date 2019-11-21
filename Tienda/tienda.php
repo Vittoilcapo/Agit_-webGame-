@@ -2,7 +2,7 @@
 
 //Va a obtener todo lo relacionado a la tienda que esta en la base de datos
   include_once("connectBD.php");
-
+  require_once('usuario.php');
   session_start();
   $Sentencia_sql="select * from armas_tienda ;";
   $resultado = conectar($Sentencia_sql);
@@ -45,10 +45,8 @@
 
         <h2>
         <?php
-        require_once('usuario.php');
-        $usuario = new usuario;
-        $usuario->setUsuario($_SESSION['usuario_id']);
-        echo $usuario->usuario_dinero;
+
+        echo $_SESSION['ClaseUsuario']->usuario_dinero;
         ?>
 
         <div class="coinimagen"><img src="img/moneda.png" width="30" height="30"></div>

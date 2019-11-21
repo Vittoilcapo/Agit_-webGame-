@@ -1,13 +1,13 @@
 <?php
 
   include_once("connectBD.php");
+  include_once('usuario.php');
   session_start();
-  require 'usuario.php';
-  $user = new usuario;
+
    //esta funcion luego va a tener que ir cuando se crean los usuarios
 
-  $inventario_id = $user->inventario_id;
-  $dinero = $user->usuario_dinero;
+  $inventario_id = $_SESSION['ClaseUsuario']->inventario_id;
+  $dinero = $_SESSION['ClaseUsuario']->usuario_dinero;
 
   $arma = $_SESSION["nombre_arma"];
   $fuerza = $_SESSION["fuerza"];
@@ -30,7 +30,7 @@ if(mysqli_num_rows($resultado) > 0){
   if ($resultado) {
         echo "Compra realizada con exito";
         $user->usuario_dinero = $dinero - $precioArma;
-        $sql="update usuario SET usuario_dinero=".$user->usuario_dinero." WHERE usuario_id='".$user->usuario_id."';";
+        $sql="update usuario SET usuario_dinero=".$_SESSION['ClaseUsuario']->usuario_dinero." WHERE usuario_id='".$_SESSION['ClaseUsuario']->usuario_id."';";
         $resultado= conectar($sql);
 
 }
