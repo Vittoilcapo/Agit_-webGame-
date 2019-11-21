@@ -23,7 +23,7 @@
                 <div class="input-addon">
                     <i class="material-icons">face</i>
                 </div>
-                <input id="username" placeholder="Username" type="text" required class="validate" autocomplete="off" name="campo_mail_html">
+                <input id="username" placeholder="Email address" type="text" required class="validate" autocomplete="off" name="campo_mail_html">
             </div>
 
             <div class="clearfix"></div>
