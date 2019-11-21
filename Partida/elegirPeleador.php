@@ -1,3 +1,7 @@
+<?php
+include_once('../Tienda(connectBD.php)');
+
+ ?>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -18,7 +22,7 @@
 
 
     </div>
-    <div class= "comprar" style="text-align: center"><input type="submit" name="comprar" value="Ver"></div>
+    <div class= "comprar" style="text-align: center"><input type="submit" name="comprar" value="Pelear"></div>
     </form>
 
   </body>

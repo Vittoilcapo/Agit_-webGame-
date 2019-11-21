@@ -98,7 +98,7 @@ td {
 }
 
 .comprar {
-  position: relative;
+  position: static;
   top: 100px
 }
 .grid-item {

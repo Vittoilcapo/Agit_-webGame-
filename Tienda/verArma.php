@@ -81,7 +81,7 @@ if (isset($_POST['armas'])) {
          </div>
 
   </body>
-  <footer><a href="/JuegoWeb/login/menu.html"> </a></footer>
+  <footer><button class="enlace" role="link" onclick="location.href='../Tienda/tienda.php'">Volver</button></footer>
 </html>
 <?php }else {
 

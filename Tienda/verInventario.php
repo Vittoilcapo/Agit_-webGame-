@@ -14,3 +14,13 @@ $inventario-> obtenerInventario($id_inventario);
 
 
  ?>
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <meta charset="utf-8">
+     <title>inventario</title>
+   </head>
+   <footer>
+     <button class="enlace" role="link" onclick="location.href='../Menu/menu.html'">Volver</button>
+   </footer>
+ </html>
