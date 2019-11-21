@@ -53,7 +53,6 @@
         $_SESSION['error'] = ""?>
           <p><?php echo $_SESSION['error']; ?> </p>
       </div>
-      laralara
     </footer>
 </body>
 
