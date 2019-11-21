@@ -78,7 +78,7 @@
     </div>
     <div class= "comprar" style="text-align: center"><input type="submit" name="comprar" value="Ver"></div>
     </form>
-
+<a href="/Juego/Menu/menu.html">volver</a>
   </body>
   <footer><a href="/Juego/Menu/menu.html"> </a></footer>
 </html>
