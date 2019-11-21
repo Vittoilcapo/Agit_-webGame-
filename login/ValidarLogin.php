@@ -41,7 +41,9 @@ if ($exito==true){
 
 
 }else{
-include_once 'entradaPrincipal.php';
+            include_once 'entradaPrincipal.php';
+
+
             echo $_SESSION['errorlog'];
 
 
