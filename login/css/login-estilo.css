@@ -46,6 +46,12 @@ body {
 	top: 2px;
   color: #373b3d;
 }
+.error2{
+    position: relative;
+    text-align: center;
+    top: -50px;
+
+}
 
 .input {
     margin: auto;
@@ -137,6 +143,16 @@ input[type=submit] {
 }
 
 .register {
+    margin: auto;
+    padding: 16px 0;
+    text-align: center;
+    margin-top: 40px;
+    width: 85%;
+    color: #000000;
+    border-top: 1px solid #C1C3C6;
+}
+
+.error {
     margin: auto;
     padding: 16px 0;
     text-align: center;
