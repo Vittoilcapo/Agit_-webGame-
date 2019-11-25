@@ -25,7 +25,7 @@ if(mysqli_num_rows($resultado) > 0){
 }else if ($dinero < $precioArma){
     echo "usted no tiene suficiente dinero para comprar este Item";
   }else{
-  $sql="insert inventario_armas values ('".$inventario_id."','".$arma."','".$velocidad."','".$fuerza."','".$agilidad."')";
+  $sql="insert into inventario_armas values ('".$inventario_id."','".$arma."','".$velocidad."','".$fuerza."','".$agilidad."')";
   $resultado= conectar($sql);
   if ($resultado) {
         echo "Compra realizada con exito";

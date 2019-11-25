@@ -4,50 +4,56 @@ session_start();
 include_once("connectBD.php");
 
 $inventario_id = $_SESSION['ClaseUsuario']->inventario_id;
-$dinerousuario = $_SESSION['ClaseUsuario']->usuario_dinero;
+$dinerouser = $_SESSION['ClaseUsuario']->usuario_dinero;
 echo "$";
-echo $dinerousuario;
+echo $dinerouser;
 echo "<br>";
 
 
 if ($_REQUEST["skin"] == "newells"){
-  $precio="20000";
+  $precio=2000;
   $skin="newells";
-  echo "vamooooooo newells";
+
   echo "<br>";
 }elseif ($_REQUEST["skin"] == "enanoboca") {
-  $precio="1500";
+  $precio=1500;
 
   $skin="boca";
-  echo "vamo bokita";
   echo "<br";
 
 }elseif ($_REQUEST["skin"] == "chinwenwencha") {
-  $precio="1000";
+  $precio=1000;
 
   $skin="chinwenwencha";
-  echo "te la tomaste toda";
   echo "<br>";
 }
 
-if ($dinerousuario < $precio) {
-  echo "pica de aca logi";
-  echo "<br>";
-  echo "anda a trabajar";
+
+if ($dinerouser < $precio) {
+  echo "Dinero insuficiente";
 }else {
-  echo "su compra ha sido realizada con exito";
 
-  $sql="insert inventario_skin values ('".$inventario_id."',".$skin."')";
-  $resultado= conectar($sql)or die ("algo anda mal");
+  $sql="select tienda_skin_nombre from inventario_skin where tienda_skin_nombre='".$skin."';";
+  $resultado= conectar($sql);
+  $error = false;
+  while ($estadisiticas = mysqli_fetch_array($resultado)){
+    $error = true;
+  }
+  if ($error==true){
+    echo "<script language=JavaScript> alert('Usted ya tiene esa skin.'); window.location.href = 'comprarskin.php';</script>";
+  }else{
+      $sql="insert into inventario_skin values (".$inventario_id.",'".$skin."');";
+      $resultado= conectar($sql);
+      if ($resultado) {
+
+        //    echo "Compra realizada con exito";
+          $dinerousuario = $dinerouser - $precio;
+
+          $sql="update usuario SET usuario_dinero=".$dinerousuario." WHERE usuario_id=".$_SESSION['ClaseUsuario']->usuario_id.";";
+          $dinero= conectar($sql);
+          echo "Su compra ha sido realizada con exito";
 }
-  if ($resultado) {
-        echo "Compra realizada con exito";
-        $user->usuario_dinero = $dinero - $precio;
-        echo $usuario_dinero;
-        $sql="update usuario SET usuario_dinero=".$_SESSION['ClaseUsuario']->usuario_dinero." WHERE usuario_id='".$_SESSION['ClaseUsuario']->usuario_id."';";
-        $resultado= conectar($sql);
-
-
+}
 }
 
   ?>
