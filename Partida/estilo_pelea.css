@@ -1,0 +1,63 @@
+body{
+  background-color: #303641;
+}
+
+.contenedor{
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  background-color: #303641;
+  width: 100%;
+  height: 10%;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  justify-content: space-around ;
+  align-content: space-around ;
+
+}
+
+.rivales {
+  width: 110px;
+  height: 200px;
+  text-align: center;
+  color: #f005f0;
+  border:solid 5px #f005f0;
+  -moz-border-radius: 75px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+}
+
+/* Empieza felxbox*/
+.checkboxes{
+  position: absolute;
+  top:400px;
+  left: 0px;
+  background-color: #303641;
+  width: 100%;
+  height: 10%;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  height: 50px;
+  justify-content: space-around ;
+  align-content: space-around ;
+
+
+}
+h3{
+  text-align: center;
+}
+h4{
+  text-align: center;
+}
+
+img{
+  text-align: center;
+  width: 80px; height: 80px;
+}
+.btnPelar{
+  position:relative;
+  bottom: auto;
+}
