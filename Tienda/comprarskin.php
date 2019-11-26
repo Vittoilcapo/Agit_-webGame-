@@ -5,39 +5,50 @@
   <head>
     <title>Seleccionar campeones</title>
 
-<form method="get" action="pruebabruto.php">
+<form method="get" action="verskin.php">
 
 
 
 <br>
 <br>
 <article>
-    <div id="boxeador">
-          <img src="img\boxeador.png" width="250" height="200" alt="foto boxeador"/>
+    <div id="newells">
+          <img src="img\newells.jpg" width="250" height="200"/>
           <br>
-          <input id="botonboxeador"  type="submit"  name="boxeadorcomprar" value="seleccionar">
+          <input id="botonnewells"  type="submit"  name="skin" value="newells" />
 
                 </div>
 
 
 
-    <div id="caballero">
-          <img src="img\caballero.gif" width="250" height="200" alt="pacote"/>
-          <br>
-          <input id="botoncaballero"  type="submit"  name="caballerocomprar" value="seleccionar">
+            <div id="enanoboca">
+                      <img src="img\enanoboca.png" width="250" height="200"/>
+                      <br>
+                      <input id="botonenano"  type="submit"  name="skin" value="enanoboca" />
 
-                </div>
-
-
-
-    <div id="raccoon">
-          <img src="img\raccoon.gif" width="250" height="200" alt="pacote"/>
-          <br>
-          <input id="botonraccoon"  type="submit"  name="raccooncomprar" value="seleccionar">
-
-                </div>
+                            </div>
 
 
+
+
+                <div id="chinwenwencha">
+                      <img src="img\chinwenwencha.jpg" width="250" height="200"/>
+                                  <br>
+                                <input id="botonchinwenwencha"  type="submit"  name="skin" value="chinwenwencha"/>
+
+                                        </div>
+
+</form>
+<?php
+require_once('usuario.php');
+session_start();
+include_once("connectBD.php");
+
+echo $_SESSION['ClaseUsuario']->usuario_dinero;
+
+/*$var=$_REQUEST[$usuario_dinero];
+echo $var;*/
+?>
 </article>
 
 

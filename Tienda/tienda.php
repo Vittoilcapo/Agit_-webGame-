@@ -78,6 +78,9 @@
     <input type="submit" name="comprar" value="Ver">
     </div>
     </form>
+    <form method="post" action="comprarskin.php">
+    <input type="submit" value="comprar skins"/>
+  </form>
   </body>
   <footer>
      <button class="enlace" role="link" onclick="location.href='../Menu/menu.html'">Volver</button>
