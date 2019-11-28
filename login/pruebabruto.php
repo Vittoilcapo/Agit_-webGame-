@@ -34,12 +34,15 @@ include_once("../Tienda/connectBD.php");
 
 $sql="update `juego`.`usuario` SET `macaco_id` = '$comprar' WHERE (`usuario_mail` = '$mail');";
 $resultado= conectar($sql);
+$id_usuario = $_SESSION['id_usuario'];
 if ($resultado) {
       echo "Compra realizada con exito";
       //$sql="update `juego`.`usuario` SET `macaco_id` = '$comprar' WHERE (`usuario_mail` = '$mail');";
-      $sql="insert into `juego`.`estadisticas` (`usuario_mail`, `estadisticas_velocidad`, `estadisticas_fuerza`, `estadisticas_agilidad`) VALUES ('$mail', '$velocidad', '$fuerza', '$agilidad');";
+      $sql="insert into `juego`.`estadisticas` (`usuario_mail`,`usuario_id`, `estadisticas_velocidad`, `estadisticas_fuerza`, `estadisticas_agilidad`) VALUES ('$mail','$id_usuario', '$velocidad', '$fuerza', '$agilidad');";
       $resultado= conectar($sql);
-      header("Location:/Juego/login/entradaPrincipal.php");
+      $sql="insert into `juego`.`inventario_skin` (`inventario_id`, `inventario_skin_foto`) VALUES ('$id_usuario','../Tienda/img/enanoboca.png');";
+      $resultado= conectar($sql);
+      echo "<script language=JavaScript> alert('Registrado con exito'); window.location.href = 'entradaPrincipal.php';</script>";
 
 }
 

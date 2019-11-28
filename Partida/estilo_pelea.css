@@ -42,7 +42,74 @@ body{
   flex-wrap: wrap;
   height: 50px;
   justify-content: space-around ;
-  align-content: space-around ;
+
+
+
+}
+
+.marcoPrincipal{
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+
+
+  }
+
+  .peleador1{
+    position: relative;
+    height: 258px;
+    width: 150px;
+    outline: 4px solid #ffffff;
+  }
+  .peleador2{
+    position: relative;
+    text-align: right;
+    height: 258px;
+    width: 150px;
+    outline: 4px solid #ffffff;
+  }
+  .log1{
+    position: relative;
+    height: 400px;
+    width: 200px;
+    outline: 4px solid #ffffff;
+  }
+  .log2{
+    text-align: right;
+    position: relative;
+    height: 400px;
+    width: 200px;
+    outline: 4px solid #ffffff;
+  }
+  #fight{
+    height:200px;
+    width: 200px;
+  }
+  #skinRival{
+    position: relative;
+    width: 120px; height: 240px;
+  }
+  #skinUsuario{
+    position: relative;
+    width: 120px; height: 240px;
+  }
+
 
 
 }
