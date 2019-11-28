@@ -38,6 +38,10 @@
 
                                         </div>
 
+</form >
+
+<form method="post" action="tienda.php">
+<input id="botonvolver"  type="submit"  name="volver" value="Volver"/>
 </form>
 <?php
 require_once('usuario.php');
