@@ -33,7 +33,7 @@ $resultado=$num1-$num2;
 echo "resultado es " . $resultado;
 
     */
-  $sql="insert into inventario_armas values ('".$inventario_id."','".$arma."','".$velocidad."','".$fuerza."','".$agilidad."')";
+  $sql="insert into inventario_armas values ('".$inventario_id."','".$arma."','".$velocidad."','".$fuerza."','".$agilidad."',0)";
   $resultado= conectar($sql);
   if ($resultado) {
 
