@@ -8,13 +8,13 @@ include_once('../Tienda/connectBD.php');
     <link rel="stylesheet" href="estilo_pelea.css">
   </head>
     <header>
-      <h1 style="text-align: center">Eliga contra quien quiere pelear</h1>
+      <h1 style="text-align: center">Elija contra quien quiere pelear</h1>
   </header>
   <body>
 
     <div class="contenedor">
       <?php
-        $sql ="select u.usuario_id, u.usuario_nombre, u.usuario_nivel, i.inventario_skin_foto, e.estadisticas_velocidad, e.estadisticas_fuerza, e.estadisticas_agilidad from usuario u inner join inventario_skin i inner join estadisticas e
+        $sql="select u.usuario_id, u.usuario_nombre, u.usuario_nivel, i.inventario_skin_foto, e.estadisticas_velocidad, e.estadisticas_fuerza, e.estadisticas_agilidad from usuario u inner join inventario_skin i inner join estadisticas e
               where u.inventario_id = i.inventario_id and e.usuario_mail = u.usuario_mail;"; // obtengo a los rivales disponibles
               /*
                 FALTA QUE SOLO OBTENGA A LOS QUE SON PARECIDOS A SU NIVEL
