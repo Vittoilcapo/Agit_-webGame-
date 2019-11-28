@@ -29,7 +29,7 @@ if(mysqli_num_rows($resultado) > 0){
   $resultado= conectar($sql);
   if ($resultado) {
         echo "Compra realizada con exito";
-        $user->usuario_dinero = $dinero - $precioArma;
+        $_SESSION['ClaseUsuario']->usuario_dinero = $dinero - $precioArma;
         $sql="update usuario SET usuario_dinero=".$_SESSION['ClaseUsuario']->usuario_dinero." WHERE usuario_id='".$_SESSION['ClaseUsuario']->usuario_id."';";
         $resultado= conectar($sql);
 

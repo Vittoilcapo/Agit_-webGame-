@@ -72,13 +72,14 @@ if ($existe==true){
 
   $sql = "insert into inventario values();";
   $resultado = conectar($sql); // inserta un inventario nuevo para el usuario
-  $sql = "select max(inventario_id) AS id from inventario;"; // obtiene que inventario se asigno
+  $sql = "select max(inventario_id) AS id from inventario;"; // obtiene que inventario que se asigno
   $resultado = conectar($sql);
 
 
   while($result=mysqli_fetch_array($resultado)){
 
     $id_user = $result["id"];
+    $_SESSION['id_usuario'] = $id_user;
 
   }
 
