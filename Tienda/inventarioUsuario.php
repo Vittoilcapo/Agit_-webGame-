@@ -1,4 +1,5 @@
 <?php
+include_once("connectBD.php");
 class InventarioArmas{
 
   public $nombre_arma;
@@ -8,8 +9,6 @@ class InventarioArmas{
 
 
   function obtenerInventario($id_inventario){
-  setearArmaDefault($id_inventario);
-  include_once("connectBD.php");
    $Sentencia_sql="select i.inventario_armas_nombre, i.inventario_armas_velocidad, i.inventario_armas_fuerza, i.inventario_armas_agilidad, t.armas_imagen from
    inventario_armas i join armas_tienda t where i.inventario_id =".$id_inventario." and t.armas_tienda_nombre = i.inventario_armas_nombre ;";
 
@@ -38,15 +37,14 @@ class InventarioArmas{
       <td>".$inventario["inventario_armas_fuerza"]."</td>
       <td>".$inventario["inventario_armas_agilidad"]."</td>";
       echo "<td>";?>
-      <div class ='check'>
-        <form action="inventarioUsuario.php" method="post">
-        <input type='radio' name='armasDefault' value="<?php $inventario["inventario_armas_nombre"]?>">
 
-        <input type="submit" class="setear" value="Setear Arma Default"/>
+        <?php
+        echo "<input type='radio' name='armasDefault' id='checkboxes' value='".$inventario["inventario_armas_nombre"]."' onclick='foo()'>";
+        ?>
 
 
         </form>
-      </div>"
+      </div>
       <?php
       echo "</td>";
     echo "</tr>";
@@ -56,22 +54,34 @@ class InventarioArmas{
 
     </table>
 
-    <?php
 
+    <script type="text/javascript">
 
+    var checkbox = document.getElementById("checkboxes");
+    function foo(){
+      if(checkbox.checked){
+        <?php setearArmaDefault($id_inventario);
+        echo "hola";
+        ?>
+      };
+    };
+    </script>
 
+<?php
 
 }
 
 }
 function setearArmaDefault($id_inventario){
-  if ($_POST['armasDefault'] == "Martillo" ){
+  if ("Martillo" == "Martillo" ){
     $Sentencia_sql="update inventario_armas set ArmaDefault = '1' where (inventario_id =".$id_inventario.") and (inventario_armas_nombre = Martillo);";
     $resultado = conectar($Sentencia_sql);
-  }else if () {
+    echo "cambiado con exito";
+  }else if ("Espada" == "Espada") {
     $Sentencia_sql="update inventario_armas set ArmaDefault = '1' where (inventario_id =".$id_inventario.") and (inventario_armas_nombre = Espada);";
     $resultado = conectar($Sentencia_sql);
-  }else if () {
+    echo "cambiado con exito";
+  }else if ($nombreArma == "Lanza") {
     $Sentencia_sql="update inventario_armas set ArmaDefault = '1' where (inventario_id =".$id_inventario.") and (inventario_armas_nombre = Lanza);";
     $resultado = conectar($Sentencia_sql);
   }else{
@@ -79,10 +89,5 @@ function setearArmaDefault($id_inventario){
     $resultado = conectar($Sentencia_sql);
   }
 }
-
-}
-
-
-
 
  ?>
