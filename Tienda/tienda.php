@@ -74,15 +74,21 @@
        <div class="lanza"><input type="radio" name="armas" value="Lanza"></div>
 
     </div>
+    <div class="botones">
+    <center>
     <div class= "comprar" style="text-align: center">
-    <input type="submit" name="comprar" value="Ver">
+    <input class="btnVer" type="submit" name="comprar" value="Ver">
     </div>
     </form>
+<br>
     <form method="post" action="comprarskin.php">
-    <input type="submit" value="comprar skins"/>
-  </form>
-  </body>
-  <footer>
+    <input class="btnSkins" type="submit" value="Comprar skin"/>
+    </form>
+
+
      <button class="enlace" role="link" onclick="location.href='../Menu/menu.html'">Volver</button>
-  </footer>
+
+  <center>
+  </div>
+      </body>
 </html>
