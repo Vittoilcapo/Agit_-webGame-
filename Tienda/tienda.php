@@ -74,21 +74,17 @@
        <div class="lanza"><input type="radio" name="armas" value="Lanza"></div>
 
     </div>
-    <div class="botones">
-    <center>
     <div class= "comprar" style="text-align: center">
     <input class="btnVer" type="submit" name="comprar" value="Ver">
     </div>
     </form>
-<br>
+    <center>
     <form method="post" action="comprarskin.php">
     <input class="btnSkins" type="submit" value="Comprar skin"/>
-    </form>
-
-
+  </form>
+  </body>
+  <footer>
      <button class="enlace" role="link" onclick="location.href='../Menu/menu.html'">Volver</button>
-
-  <center>
-  </div>
-      </body>
+  </footer>
+</center>
 </html>

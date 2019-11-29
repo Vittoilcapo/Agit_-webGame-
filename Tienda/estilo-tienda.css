@@ -152,6 +152,7 @@ td {
   border: 0 none;
   cursor: pointer;
   border-radius: 3px;
+
 }
 
 .btnSkins{
@@ -163,6 +164,7 @@ td {
   border: 0 none;
   cursor: pointer;
   border-radius: 3px;
+      margin-top: -10px;
 }
 
 .enlace{
@@ -174,6 +176,7 @@ td {
   border: 0 none;
   cursor: pointer;
   border-radius: 3px;
+      margin-top: -10px;
 }
 
 .botones{
