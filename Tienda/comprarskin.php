@@ -1,9 +1,21 @@
+<?php
+$_SESSION['dineroUsuario'] = "<p class='dinero'>Dispones de $</p>";
+//include_once("../login/ValidarLogin.php");
+//$usuario=$_SESSION['ClaseUsuario'];
+//echo $usuario;
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <meta charset="utf-8">
-<link rel="stylesheet" href="css/seleccionbruto.css">
+<link rel="stylesheet" href="seleccionSkin.css">
   <head>
     <title>Seleccionar campeones</title>
+
+
+  </head>
+    <body class="fondoSkin">
+<center>
 
 <form method="get" action="verskin.php">
 
@@ -11,29 +23,20 @@
 
 <br>
 <br>
-<article>
+
     <div id="newells">
-          <img src="img\newells.jpg" width="250" height="200"/>
-          <br>
+          <img src="img\newellspng.png" width="250" height="200"/>
+
           <input id="botonnewells"  type="submit"  name="skin" value="newells" />
 
-                </div>
 
-
-
-            <div id="enanoboca">
                       <img src="img\enanoboca.png" width="250" height="200"/>
-                      <br>
+
                       <input id="botonenano"  type="submit"  name="skin" value="enanoboca" />
 
-                            </div>
 
+                      <img src="img\chinwenwenchapng.png" width="250" height="200"/>
 
-
-
-                <div id="chinwenwencha">
-                      <img src="img\chinwenwencha.jpg" width="250" height="200"/>
-                                  <br>
                                 <input id="botonchinwenwencha"  type="submit"  name="skin" value="chinwenwencha"/>
 
                                         </div>
@@ -43,26 +46,17 @@
 <form method="post" action="tienda.php">
 <input id="botonvolver"  type="submit"  name="volver" value="Volver"/>
 </form>
+<center>
 <?php
-require_once('usuario.php');
-session_start();
-include_once("connectBD.php");
 
-echo $_SESSION['ClaseUsuario']->usuario_dinero;
+//session_start();
+$_SESSION['skinInvalido'] = "<p class='error1'>Usted ya compró este skin</p>";
 
-/*$var=$_REQUEST[$usuario_dinero];
-echo $var;*/
+$_SESSION['skinValido'] = "<p class='valido'>Compra realizada con éxito</p>";
 ?>
-</article>
-
-
-
-
-
-
-
-  </head>
-  <body>
+</center>
 
   </body>
+
+
 </html>
