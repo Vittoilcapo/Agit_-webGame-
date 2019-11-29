@@ -46,3 +46,6 @@ echo "resultado es " . $resultado;
 
 }
 ?>
+<!DOCTYPE html>
+<div><a href="/Juego/Tienda/tienda.php" >volver</a></div>
+</html>

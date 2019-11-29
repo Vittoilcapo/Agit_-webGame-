@@ -5,27 +5,32 @@ include_once("connectBD.php");
 
 $inventario_id = $_SESSION['ClaseUsuario']->inventario_id;
 $dinerouser = $_SESSION['ClaseUsuario']->usuario_dinero;
+//include_once ('comprarskin.php');
+
+/*
 echo "$";
 echo $dinerouser;
 echo "<br>";
-
+*/
 
 if ($_REQUEST["skin"] == "newells"){
   $precio=2000;
   $skin="newells";
-
-  echo "<br>";
+//session_destroy();
+  //echo "<br>";
 }elseif ($_REQUEST["skin"] == "enanoboca") {
   $precio=1500;
 
   $skin="boca";
-  echo "<br>";
+  //session_destroy();
+  //echo "<br>";
 
 }elseif ($_REQUEST["skin"] == "chinwenwencha") {
   $precio=1000;
 
   $skin="chinwenwencha";
-  echo "<br>";
+  //session_destroy();
+  //echo "<br>";
 }
 
 
@@ -35,10 +40,17 @@ $Sentencia_sql="select inventario_skin_foto from inventario_skin where inventari
 $resultado = conectar($Sentencia_sql);
 
 if(mysqli_num_rows($resultado) > 0){
-  echo "usted ya tiene este skin";
-}else if ($dinerouser < $precio){
+  include_once 'comprarskin.php';
 
-    echo "usted no tiene suficiente dinero para comprar este skin";
+
+  echo $_SESSION['skinInvalido'];
+}else if ($dinerouser < $precio){
+include_once 'comprarskin.php';
+
+
+
+  echo "No tienes suficiente dinero para este skin ya que dispones de $ " . $dinerouser;
+
   }else{
     /*
 $num1=10;
@@ -54,7 +66,9 @@ echo "resultado es " . $resultado;
         $_SESSION['ClaseUsuario']->usuario_dinero = $dinerouser - $precio;
         $sql="update usuario SET usuario_dinero=".$_SESSION['ClaseUsuario']->usuario_dinero." WHERE usuario_id=".$_SESSION['ClaseUsuario']->usuario_id.";";
         $resultado= conectar($sql);
-        echo "Compra realizada con exito";
+include_once 'comprarskin.php';
+        echo $_SESSION['skinValido'];
+
 }
 
 

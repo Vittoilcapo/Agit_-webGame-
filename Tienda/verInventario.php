@@ -4,8 +4,8 @@ session_start();
 require_once 'inventarioUsuario.php';
 
 
-$class = $_SESSION['ClaseUsuario'];
-$_SESSION['id_inventario'] = $class->inventario_id;
+  $class = $_SESSION['ClaseUsuario'];
+  $_SESSION['id_inventario'] = $class->inventario_id;
 
 
 
@@ -22,14 +22,18 @@ $inventario-> obtenerInventario($_SESSION['id_inventario']);
      <script>
            function foo(nombre_arma) {
           var selection = document.getElementById("checkboxes");
-          
+
 
           if (selection.checked) {
+            alert("hola");
               window.location.href = ('wea.php?inventarioNombre='+nombre_arma);
           }
 
       }
      </script>
+     <form method="post" action="\Juego\Tienda\subirpuntos.php">
+       <input type="submit" value="subir puntos">
+    </form>
    </head>
    <footer>
      <button class="enlace" role="link" onclick="location.href='../Menu/menu.html'">Volver</button>

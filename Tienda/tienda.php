@@ -75,14 +75,16 @@
 
     </div>
     <div class= "comprar" style="text-align: center">
-    <input type="submit" name="comprar" value="Ver">
+    <input class="btnVer" type="submit" name="comprar" value="Ver">
     </div>
     </form>
+    <center>
     <form method="post" action="comprarskin.php">
-    <input type="submit" value="comprar skins"/>
+    <input class="btnSkins" type="submit" value="Comprar skin"/>
   </form>
   </body>
   <footer>
      <button class="enlace" role="link" onclick="location.href='../Menu/menu.html'">Volver</button>
   </footer>
+</center>
 </html>
