@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'Permanent Marker', cursive;
+  font-size: Normal;
+}
 body{
   background-color: #303641;
 }
@@ -47,54 +51,60 @@ body{
 
 }
 
+#botonPelear{
+  height: 30px;
+  width: 30px;
+}
+
 .marcoPrincipal{
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #303641;
+  width: 100%;
+  height: 80%;
+  float: left;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  justify-content: space-around ;
+  align-content: space-around ;
+}
 
+.ganaUsuario{
+  
 
-
-  }
+}
 
   .peleador1{
     position: relative;
     height: 258px;
-    width: 150px;
+    width: 145px;
     outline: 4px solid #ffffff;
   }
   .peleador2{
     position: relative;
-    text-align: right;
     height: 258px;
-    width: 150px;
+    width: 145px;
     outline: 4px solid #ffffff;
   }
   .log1{
     position: relative;
-    height: 400px;
-    width: 200px;
+    text-align:left;
+    font-family: 'Permanent Marker';
+    color:#ffffff;
+    font-size: 30px;
+    height: 550px;
+    width: 400px;
     outline: 4px solid #ffffff;
   }
   .log2{
-    text-align: right;
     position: relative;
-    height: 400px;
-    width: 200px;
+    text-align:left;
+    font-family: 'Permanent Marker';
+    color:#ffffff;
+    font-size: 30px;
+    height: 550px;
+    width: 400px;
     outline: 4px solid #ffffff;
   }
   #fight{
@@ -124,7 +134,19 @@ img{
   text-align: center;
   width: 80px; height: 80px;
 }
-.btnPelar{
-  position:relative;
-  bottom: auto;
+#botonPelearRival{
+  background-color: #000000;
+  position: relative;
+  width: 40px;
+  height: 40px
+
+
+}
+#botonPelearUsuario{
+  background-color: #1BFF00;
+  position: relative;
+  width: 40px;
+  height: 40px
+
+
 }
