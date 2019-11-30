@@ -5,6 +5,8 @@ include_once('../Tienda/usuario.php');
 session_start();
 $ClaseRival = $_SESSION['ClaseRival'];
 $totalDeDaño = 0;
+$VaApegar= 0;
+
 
 ///////////////////////aca va a pegar/////////////////////////////
 function golpear($ClaseRival){
@@ -22,8 +24,6 @@ echo "El rival ataca...";
 echo "<br>";
 $velocidadRival= $ClaseRival->velocidad;
 $cantidadGolpes = rand(1,10);
-echo $cantidadGolpes;
-echo "<br>";
 $cantGolpesA_pegar= $velocidadRival * $cantidadGolpes;
 ////////////voy a obtener la agilidad
 $agilidadUsuario = $_SESSION['ClaseUsuario']->agilidad;
@@ -74,16 +74,18 @@ if ($totalDeDaño==0) {
     echo "<br>";
     echo "Daño total causado =". $totalDeDaño;
     echo "<br>";
+
     $_SESSION['vidaUsuario'] = $_SESSION['vidaUsuario'] - $totalDeDaño;
 
-    if($_SESSION['vidaUsuario'] <= 0){
-      $_SESSION['QuienGano'] = "usuario";
-    }else if ($_SESSION['vidaRival'] <= 0) {
-      $_SESSION['QuienGano'] = "rival";
-    }else {
-        echo $_SESSION['vidaUsuario'];
-        }
-}
+    ?>
+    <script type="text/javascript">
+        document.getElementById('ganaRival').style.display = 'block';
+    </script>
 
+    <?php
+
+
+}
+echo $_SESSION['vidaUsuario'];
 ///////////////////////////////////////////////////////////////////////////
  ?>

@@ -22,8 +22,6 @@ echo "Tu turno de atacar...";
 echo "<br>";
 $velocidadUsuario= $ClaseUsuario->velocidad;
 $cantidadGolpes = rand(1,10);
-echo $cantidadGolpes;
-echo "<br>";
 $cantGolpesA_pegar= $velocidadUsuario * $cantidadGolpes;
 ////////////voy a obtener la agilidad
 $agilidadRival = $_SESSION['ClaseRival']->agilidad;
@@ -80,13 +78,8 @@ if ($totalDeDaño==0) {
     echo "<br>";
 
 
+
 }
 echo $_SESSION['vidaRival'];
-if($_SESSION['vidaUsuario'] <= 0){
-  echo "<?php header('location: insertarDatosPartida.php')?>";
-  //echo "<script language=JavaScript> alert('Gana el Usuario'); window.location.href = 'insertarDatosPartida.php?ganador=+'"."Usuario"."';</script>";
-}else if ($_SESSION['vidaRival'] <= 0) {
-  echo "<?php header('location: insertarDatosPartida.php')?>";
-}
 ////////////////////////window.location.href = 'insertarDatosPartida.php?ganador=+'"."Rival"."';///////////////////////////////////////////////////
  ?>

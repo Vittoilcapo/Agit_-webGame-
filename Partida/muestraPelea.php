@@ -11,8 +11,9 @@
 
 
 //Setea la vida
-$_SESSION['vidaUsuario'] = 500;
+
 $_SESSION['vidaRival'] = 500;
+$_SESSION['vidaUsuario'] = 500;
 
 //funciones para hacer daño
 
@@ -38,16 +39,7 @@ $_SESSION['vidaRival'] = 500;
       </div>
      <div class="marcoPrincipal">
 
-
-          <button id="botonPelearUsuario" value="usuario" onclick="pegar()"></button>
-
-
-          <button type="button" name="Rival" id="botonPelearRival" value="rival" onclick="pegar2()"></button>
-
-
         <div class="peleador1" id="Usuario">
-
-
 
         <?php
         echo $ClaseUsuario->usuario_nombre;
@@ -63,27 +55,25 @@ $_SESSION['vidaRival'] = 500;
         <div class="fight"><img src="fight.png" id="fight"></div>
 
         <div class="contenedorDePeleador2">
+          <div class="log2" id="logRival">
+            
+          </div>
+       </div>
         <div class="peleador2" id="rival">
 
           <?php
          echo $ClaseRival->usuario_nombre;
          //echo "<img src = '".$ClaseRival->imagen."' id= 'skinRival'";
          ?></div>
+
+         <?php
+         echo "<button id='botonPelearUsuario' value='usuario' onclick='pegar(".$_SESSION['vidaRival'].")'></button>";
+
+
+         echo "<button type='button' name='Rival' id='botonPelearRival' value='rival' onclick='pegar2(".$_SESSION['vidaUsuario'].")'></button>";
+         ?>
        </div>
 
         <div class="arma2"></div>
-        <div class="log2" id="logRival"></div>
 
-     </div>
  </html>
-
- <?php
- $quienGano = $_SESSION['QuienGano'];
-if ($quienGano == "usuario") {
-  echo "GANO USUARIO";
-}else {
-  echo "GANO RIVAL";
-}
-
-
-  ?>
