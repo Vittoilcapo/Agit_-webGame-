@@ -71,20 +71,26 @@ body{
 }
 
 .ganaUsuario{
-  
+  display: none;
 
 }
 
   .peleador1{
     position: relative;
-    height: 258px;
+    height: 80px;
     width: 145px;
+    font-family: 'Permanent Marker';
+    color:#ffffff;
+    font-size: 30px;
     outline: 4px solid #ffffff;
   }
   .peleador2{
     position: relative;
-    height: 258px;
+    height: 80px;
     width: 145px;
+    font-family: 'Permanent Marker';
+    color:#ffffff;
+    font-size: 30px;
     outline: 4px solid #ffffff;
   }
   .log1{
@@ -93,9 +99,9 @@ body{
     font-family: 'Permanent Marker';
     color:#ffffff;
     font-size: 30px;
-    height: 550px;
-    width: 400px;
-    outline: 4px solid #ffffff;
+    height: 300px;
+    width: 300px;
+
   }
   .log2{
     position: relative;
@@ -103,9 +109,9 @@ body{
     font-family: 'Permanent Marker';
     color:#ffffff;
     font-size: 30px;
-    height: 550px;
-    width: 400px;
-    outline: 4px solid #ffffff;
+    height: 300px;
+    width: 300px;
+
   }
   #fight{
     height:200px;
