@@ -54,7 +54,7 @@ echo "<td>"; echo $inventario["agilidad"]; echo "</td>";
 
     //    echo "<input type='radio' name='armasDefault' id='checkboxes' onClick=foo('".$inventario["inventario_armas_nombre"]."') >";
 
-        echo "<td><a href='wea.php?nomArma=" . $inventario['nombre']."&&id=".$inventario["id"] ."'><input type='button' value='Elija arma' name='armasDefault'></a></td>";
+        echo "<td><a href='wea.php?nomArma=" . $inventario['nombre']."&&id=".$inventario["id"] ."'><input class='btnElegir' type='button' value='Elija arma' name='armasDefault'></a></td>";
 
         ?>
       </div>

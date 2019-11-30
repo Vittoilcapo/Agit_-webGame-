@@ -19,6 +19,7 @@ $inventario-> obtenerInventario($_SESSION['id_inventario']);
    <head>
      <meta charset="utf-8">
      <title>inventario</title>
+     <link rel="stylesheet" href="estilo_Inventario.css">
      <script>
            function foo(nombre_arma) {
           var selection = document.getElementById("checkboxes");
@@ -32,7 +33,7 @@ $inventario-> obtenerInventario($_SESSION['id_inventario']);
       }
      </script>
      <form method="post" action="\Juego\Tienda\subirpuntos.php">
-       <input type="submit" value="subir puntos">
+       <input class="btnPuntos" type="submit" value="Subir puntos">
     </form>
    </head>
    <footer>

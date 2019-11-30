@@ -77,7 +77,7 @@ if (isset($_POST['armas'])) {
           </div>
           </div>
           <div>
-            <button class="enlace" role="link" onclick="location.href='InsertArmasInventario.php?precio='+<?php echo $precio ?>">Comprar</button>
+            <button class="enlace1" role="link" onclick="location.href='InsertArmasInventario.php?precio='+<?php echo $precio ?>">Comprar</button>
          </div>
 
   </body>

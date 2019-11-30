@@ -50,3 +50,39 @@ td {
   padding: 10px;
   transition: all 0.2s;
 }
+
+.btnElegir{
+  margin-top: 10px;
+  padding: 6px 25px;
+  background: #373E4A;
+  color: #ffcc00;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
+      margin-top: 10px;
+}
+
+.btnPuntos{
+  margin-top: 10px;
+  padding: 6px 25px;
+  background: #373E4A;
+  color: #ffcc00;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
+      margin-top: -40px;
+}
+
+.enlace{
+  margin-top: 10px;
+  padding: 6px 25px;
+  background: #373E4A;
+  color: #ffcc00;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
+      margin-top: -20px;
+}
