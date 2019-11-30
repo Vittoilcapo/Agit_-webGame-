@@ -1,0 +1,35 @@
+body{
+  background-color: #303641;
+  color: yellow;
+font-family: 'arial', serif;
+}
+.funcionamiento {
+  color: white;
+
+}
+.tiendaa{
+  color: white;
+
+}
+.inventarioo{
+  color: white;
+}
+
+.Subtitulo1{
+  font-style: italic;
+  font-weight: bold;
+    font-family: 'Helvetuca','Verdana','Monaco',sans-sans-serif;
+    color: yellow;
+}
+.Subtitulo2{
+  font-style: italic;
+  font-weight: bold;
+    font-family: 'Helvetuca','Verdana','Monaco',sans-sans-serif;
+    color: yellow;
+}
+.Subtitulo3{
+  font-style: italic;
+  font-weight: bold;
+    font-family: 'Helvetuca','Verdana','Monaco',sans-sans-serif;
+    color: yellow;
+}
