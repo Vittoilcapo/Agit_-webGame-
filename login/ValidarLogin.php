@@ -32,7 +32,7 @@ if ($exito==true){
   $user->setUsuario($usuario_id);
   $_SESSION['ClaseUsuario'] = $user;
 
-  header ("location: /Juego/Menu/menu.html");
+  header ("location: /Juego/Menu/menu.php");
 
 
 

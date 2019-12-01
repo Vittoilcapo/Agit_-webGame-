@@ -84,7 +84,7 @@
   </form>
   </body>
   <footer>
-     <button class="enlace" role="link" onclick="location.href='../Menu/menu.html'">Volver</button>
+     <button class="enlace" role="link" onclick="location.href='../Menu/menu.php'">Volver</button>
   </footer>
 </center>
 </html>
