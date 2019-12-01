@@ -3,6 +3,11 @@ body{
   color: yellow;
 font-family: 'arial', serif;
 }
+
+.Estrategia {
+    color: white;
+}
+
 .funcionamiento {
   color: white;
 
@@ -13,6 +18,12 @@ font-family: 'arial', serif;
 }
 .inventarioo{
   color: white;
+}
+.Subtitulo4{
+  font-style: italic;
+  font-weight: bold;
+    font-family: 'Helvetuca','Verdana','Monaco',sans-sans-serif;
+    color: yellow;
 }
 
 .Subtitulo1{
