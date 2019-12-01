@@ -36,6 +36,10 @@ $inventario-> obtenerInventario($_SESSION['id_inventario']);
        <input class="btnPuntos" type="submit" value="Subir puntos">
     </form>
    </head>
+   <?php
+    // $_SESSION['modificado'] = "<p class='modificado'>Modificado con éxito</p>";
+//echo $_SESSION['modificado'];
+    ?>
    <footer>
      <button class="enlace" role="link" onclick="location.href='../Menu/menu.html'">Volver</button>
    </footer>
