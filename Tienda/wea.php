@@ -45,10 +45,10 @@ $mostrar["nombre"],$mostrar["id"],$mostrar["arma"]
 //$modificar="update `juego`.`inventario_armas` SET `armasdefault` =0 WHERE (`inventario_id`=8) and (`inventario_armas_nombre` = 'Hacha');";
 
 
-  $modificar="update inventario_armas set armasdefault=1 where inventario_armas_nombre='" . $consulta[0] . "' and inventario_id=" . $consulta[1] . ";";
+  $modificar="update inventario_armas set armasDefault=1 where inventario_armas_nombre='" . $consulta[0] . "' and inventario_id=" . $consulta[1] . ";";
   conectar($modificar);
 
-$modificar2="update inventario_armas set armasdefault=0 where inventario_armas_nombre!='" . $consulta[0] . "' and inventario_id=" . $consulta[1] . ";";
+$modificar2="update inventario_armas set armasDefault=0 where inventario_armas_nombre!='" . $consulta[0] . "' and inventario_id=" . $consulta[1] . ";";
 conectar($modificar2);
 //include_once 'inventarioUsuario.php';
 //include_once ("inventarioUsuario.php");
