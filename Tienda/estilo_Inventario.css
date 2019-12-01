@@ -72,7 +72,7 @@ td {
   border: 0 none;
   cursor: pointer;
   border-radius: 3px;
-      margin-top: -40px;
+      margin-top: 30px;
 }
 
 .enlace{
@@ -84,5 +84,5 @@ td {
   border: 0 none;
   cursor: pointer;
   border-radius: 3px;
-      margin-top: -20px;
+      margin-top: -5px;
 }
