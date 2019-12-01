@@ -3,35 +3,44 @@ body{
   background-color: #303641;
 }
 @font-face {
-  font-family: 'Games';
+  font-family: 'Permanent Marker', cursive;
   font-size: Normal;
-  src: url(Menu/GameofThrones.ttf);
+}
 
-}
-.precio{
-  weight: 500px;
-  text-align: right;
-  font-family: 'Games';
-  font-size: Normal;
-  position: relative;
-
-}
-.coinimagen{
-  text-align: right;
-  position: relative;
-}
 
 .titulo{
-  width: 100%;
-  height: 70%;
-  text-align: center;
   position: relative;
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  font-family: 'Permanent Marker';
+  color:#ffffff;
+  font-size: 40px;
 
+}
+#letratitulo{
+  font-family: 'Permanent Marker';
+  color:#ffffff;
+  font-size: 150px;
+}
+#coinDiv{
+  height: 100px;
+  width: 200px;
+  font-family: 'Permanent Marker';
+  color:#ffffff;
+  font-size: 60px;
+}
+#coin{
+  height: 50px;
+  width: 50px;
+  font-family: 'Permanent Marker';
+  color:#ffffff;
+  font-size: 60px;
 }
   /* Empieza felxbox*/
   .contenedor{
     position: absolute;
-    top: 100px;
+    top: 35%;
     left: 0px;
     background-color: #303641;
     width: 100%;
@@ -48,7 +57,7 @@ body{
   /* Empieza felxbox*/
   .checkboxes{
     position: absolute;
-    top:400px;
+    top:60%;
     left: 0px;
     background-color: #303641;
     width: 100%;
@@ -61,6 +70,15 @@ body{
     align-content: space-around ;
 
 
+}
+
+.botones{
+  position: absolute;
+  top:80%;
+  left: 45%;
+  text-align: center;
+  height: 300px;
+  width: 200px;
 }
 
 table {
@@ -146,6 +164,7 @@ td {
 .btnVer{
   margin-top: 10px;
   padding: 6px 25px;
+  text-align: center;
   background: #373E4A;
   color: #ffcc00;
   font-weight: bold;
@@ -156,6 +175,7 @@ td {
 }
 
 .btnSkins{
+  top: 5%;
   margin-top: 10px;
   padding: 6px 25px;
   background: #373E4A;
@@ -189,45 +209,3 @@ td {
   border-radius: 3px;
       margin-top: 0px;
 }
-
-
-.botones{
-    margin-top: -60px;
-}
-
-
-
-
-
-
-
-
-
-
-
-  /*.grid-item {
-    color: #f005f0;
-    border:solid 5px #f005f0;
-    -moz-border-radius: 75px;
-    -webkit-border-radius: 75px;
-    border-radius: 75px;
-  }
-  .grid-item {
-transition:All 1s ease;
--webkit-transition:All 1s ease;
--moz-transition:All 1s ease;
--o-transition:All 1s ease;
-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
--webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
--moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
--o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
--ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-}
-.grid-item:hover{
-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
--webkit-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
--moz-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
--o-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
--ms-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-}
-*/

@@ -2,13 +2,23 @@
 
 include_once('rival.php');
 include_once('../Tienda/usuario.php');
+include_once('../Tienda/connectBD.php');
 session_start();
 $ClaseUsuario = $_SESSION['ClaseUsuario'];
 $totalDeDaño = 0;
 $VaApegar= 0;
 
+$sql = "select inventario_armas_velocidad as velocidad, inventario_armas_fuerza as fuerza, inventario_armas_agilidad as agilidad from inventario_armas where armasDefault = 1 and inventario_id = ".$ClaseUsuario->inventario_id." ;";
+$resultado = conectar($sql);
+
+    while ($result = mysqli_fetch_array($resultado)) {
+      $fuerza= $result["fuerza"];
+      $velocidad = $result["velocidad"];
+      $agilidad = $result['agilidad'];
+    }
+
 ///////////////////////aca va a pegar/////////////////////////////
-function golpear($ClaseUsuario){
+function golpear($ClaseUsuario,$fuerzaArma){
 
       $puntoCritico = rand(1,5);
 
@@ -16,14 +26,19 @@ function golpear($ClaseUsuario){
 
       $puntosDelGolpe = $puntoCritico * $fuerzaUsuario;
 
-      return $puntosDelGolpe;
+      $dañoDeGolpesMasArma = $puntosDelGolpe * $fuerzaArma;
+
+      $dañoDeArma = $dañoDeGolpesMasArma - $puntosDelGolpe;
+
+
+      return array($dañoDeGolpesMasArma, $dañoDeArma);
 }
 ///////////////////////////////////////////////////////////////////
-echo "Tu turno de atacar...";
+echo "Tu turno de atacar con tu arma...";
 echo "<br>";
 $velocidadUsuario= $ClaseUsuario->velocidad;
 $cantidadGolpes = rand(1,10);
-$cantGolpesA_pegar= $velocidadUsuario * $cantidadGolpes;
+$cantGolpesA_pegar= $velocidadUsuario * $cantidadGolpes + $velocidad;
 ////////////voy a obtener la agilidad
 $agilidadRival = $_SESSION['ClaseRival']->agilidad;
 
@@ -69,10 +84,12 @@ $cantidadGolpesTotalTotal = $cantGolpesA_pegar - $agilidadRival   ;
                         }else {
 ////////////////////////////////// VA A HACER LOS GOLPES ////////////////////////
                               $i = 1;
+                              $dañoDeArma = 0;
                               $VaApegar = $cantidadGolpesTotalTotal - $golpesEsquivados;
                                     while ($i <= $VaApegar) {
-                                      $dañoDeGolpes = golpear($ClaseUsuario);
-                                      $totalDeDaño = $totalDeDaño + $dañoDeGolpes;
+                                      $dañoDeGolpes = golpear($ClaseUsuario,$fuerza);
+                                      $totalDeDaño = $totalDeDaño + $dañoDeGolpes[0];
+                                      $dañoDeArma = $dañoDeArma + $dañoDeGolpes[1];
                                       $i++;
                                     }
                                 }
@@ -94,9 +111,12 @@ if ($totalDeDaño==0) {
     echo "<br>";
     echo "Daño total causado =". $totalDeDaño;
     echo "<br>";
+    echo "<br>";
+    echo "Daño de arma causado =". $dañoDeArma;
+    echo "<br>";
     $_SESSION['vidaRival'] = $_SESSION['vidaRival'] - $totalDeDaño;
 
-    $_SESSION['DañoTotalUsuario'] = $_SESSION['DañoTotal'] + $totalDeDaño;
+    $_SESSION['DañoTotalUsuario'] = $_SESSION['DañoTotalUsuario'] + $totalDeDaño;
 
     $DañoTotal = $_SESSION['DañoTotalUsuario'];
 
@@ -106,18 +126,17 @@ if ($totalDeDaño==0) {
 
       window.location.href = 'insertarDatosPartida.php?Ganador=Usuario&Daño='+<?php echo $DañoTotal; ?>;
 
-      </script>";
+      </script>
       <?php
     }else{
-    echo "la vida del rival es:";
-    echo "<br>";
-    echo $_SESSION['vidaRival'];
     ?>
-    <script type="text/javascript">
 
+    <script type="text/javascript">
+        document.getElementById('vidaRival').value = "<?php echo $_SESSION['vidaRival']; ?>";
         setTimeout(pegar2,3000);
 
     </script>
+
     <?php
     }
 }
