@@ -86,12 +86,12 @@ body{
 .contenedor_menu{
   background-color: #cca300;
   position: relative;
-  top: 20%;
+  top: 60px;
   margin: auto;
   bottom: -160px;
 
   width: 200px;
-  height: 355px;
+  height: 430px;
   border-radius: 0.35em;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
