@@ -24,7 +24,7 @@ $comprar = 3;
 
 //if (mysqli_query($conexion, $sql)) {
   //    echo "Registrado correctamente";
-    //  header('Location: menu.html');
+    //  header('Location: menu.php');
 //}else{
   //    echo "Error: " . "<br>" . "Error al registrarte";
 //}

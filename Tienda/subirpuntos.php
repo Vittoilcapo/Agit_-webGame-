@@ -49,7 +49,8 @@ Velocidad
 Agilidad
 <input type="number" name="ingresa_agilidad" value="0">
 <input type="submit" value="ingresar" name="btnIngresar">
-
+<br>
+<a href="/Juego/Menu/menu.php">volver</a>
 </form>
 <?php
 /*

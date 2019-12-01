@@ -18,10 +18,9 @@ if (isset($_POST['btnIngresar'])){
   window.location="subirpuntos.php";
   </script>
 <?php
-}else{
-echo "puede ingresar";
-
 }
+
+
 
 }
 
@@ -78,5 +77,6 @@ $resultado= conectar($sql3);
 
 
 
+header("Location: /Juego/Menu/menu.php");
 
  ?>

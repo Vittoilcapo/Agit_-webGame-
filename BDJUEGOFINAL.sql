@@ -74,7 +74,7 @@ CREATE TABLE `estadisticas` (
 
 LOCK TABLES `estadisticas` WRITE;
 /*!40000 ALTER TABLE `estadisticas` DISABLE KEYS */;
-INSERT INTO `estadisticas` VALUES ('',NULL,1,4,1,0),('11@gmail.com',11,1,3,4,0),('12@gmail.com',12,5,1,5,0),('fua@gmail.com',8,1,2,5,2),('hola@gmail.com',9,2,4,5,0),('keloke@gmail.com',10,4,4,4,0),('penelope@gmail.com',NULL,3,3,3,0),('vitto@gmail.com',NULL,1,2,3,0);
+INSERT INTO `estadisticas` VALUES ('',NULL,1,4,1,0),('11@gmail.com',11,1,3,4,0),('12@gmail.com',12,5,1,5,0),('fua@gmail.com',8,1,2,5,2),('hola@gmail.com',9,2,4,5,0),('keloke@gmail.com',10,4,4,4,4),('penelope@gmail.com',NULL,3,3,3,0),('vitto@gmail.com',NULL,1,2,3,0);
 /*!40000 ALTER TABLE `estadisticas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -220,6 +220,7 @@ CREATE TABLE `resultado` (
   `ganador_id_usuario` int(11) DEFAULT NULL,
   `resultado_fecha` date DEFAULT NULL,
   `dinero_ganado` int(11) DEFAULT NULL,
+  `daño_hecho` int(11) DEFAULT NULL,
   PRIMARY KEY (`resultado_id`),
   KEY `id_usuario_ganador_fk_idx` (`ganador_id_usuario`),
   CONSTRAINT `id_usuario_ganador_fk` FOREIGN KEY (`ganador_id_usuario`) REFERENCES `usuario` (`usuario_id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -296,7 +297,6 @@ CREATE TABLE `usuario` (
   `usuario_id` int(5) NOT NULL,
   `usuario_dinero` int(8) DEFAULT NULL,
   `usuario_nivel` int(3) DEFAULT NULL,
-  `resultado_id` int(5) DEFAULT NULL,
   `inventario_id` int(5) DEFAULT NULL,
   `usuario_nombre` varchar(45) DEFAULT NULL,
   `usuario_mail` varchar(45) NOT NULL,
@@ -306,9 +306,7 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`usuario_id`,`usuario_mail`),
   KEY `macaco_id_idx` (`macaco_id`),
   KEY `usuario_inventario_fk_idx` (`inventario_id`),
-  KEY `resultado_id_fk_idx` (`resultado_id`),
   CONSTRAINT `macaco_id` FOREIGN KEY (`macaco_id`) REFERENCES `macaco` (`macaco_id`),
-  CONSTRAINT `resultado_id_fk` FOREIGN KEY (`resultado_id`) REFERENCES `resultado` (`resultado_id`),
   CONSTRAINT `usuario_inventario_fk` FOREIGN KEY (`inventario_id`) REFERENCES `inventario` (`inventario_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -319,7 +317,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (8,2000,1,NULL,8,'fuaaaa','fua@gmail.com','Prueba1',2,NULL),(9,2520,1,NULL,9,'Keloke','hola@gmail.com','Preuba1',2,NULL),(10,860,7,NULL,10,'loquita','keloke@gmail.com','Prueba1',2,700),(11,100,1,NULL,11,'eleven','11@gmail.com','Prueba1',2,NULL),(12,100,1,NULL,12,'docee','12@gmail.com','Prueba1',2,NULL);
+INSERT INTO `usuario` VALUES (8,2000,1,8,'fuaaaa','fua@gmail.com','Prueba1',2,NULL),(9,2520,1,9,'Keloke','hola@gmail.com','Preuba1',2,NULL),(10,1000,11,10,'loquita','keloke@gmail.com','Prueba1',2,100),(11,100,1,11,'eleven','11@gmail.com','Prueba1',2,NULL),(12,100,1,12,'docee','12@gmail.com','Prueba1',2,NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -332,4 +330,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-01 17:08:01
+-- Dump completed on 2019-12-01 19:31:10
