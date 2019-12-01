@@ -3,7 +3,8 @@
 <?php
 session_start();
 include_once('connectBD.php');
-include_once 'inventarioUsuario.php';
+include_once('inventarioUsuario.php');
+
 //echo $_SESSION['modificado'];
 
 //$nombre_arma = $_GET['inventarioNombre'];
@@ -51,10 +52,14 @@ $modificar2="update inventario_armas set armasdefault=0 where inventario_armas_n
 conectar($modificar2);
 //include_once 'inventarioUsuario.php';
 //include_once ("inventarioUsuario.php");
-include_once 'inventarioUsuario.php';
+//include_once 'inventarioUsuario.php';
 //$_SESSION['modificado'] = "<p class='modificadocss'>Modificado con éxito</p>";
-  echo $_SESSION['modificado'];
 
+//include_once 'inventarioUsuario.php';
+header ("inventarioUsuario.php");
+//$_SESSION['mensaje'] = $mensaje;
+  //echo $_SESSION['mensaje'];
+//echo "modificado";
 
 //  $_SESSION['modificado'] = "<p class='modificado'>Modificado con éxito</p>";
 

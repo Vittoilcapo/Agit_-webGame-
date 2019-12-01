@@ -3,6 +3,11 @@ body{
   color: yellow;
 font-family: 'arial', serif;
 }
+
+.Estrategia {
+    color: white;
+}
+
 .funcionamiento {
   color: white;
 
@@ -13,6 +18,12 @@ font-family: 'arial', serif;
 }
 .inventarioo{
   color: white;
+}
+.Subtitulo4{
+  font-style: italic;
+  font-weight: bold;
+    font-family: 'Helvetuca','Verdana','Monaco',sans-sans-serif;
+    color: yellow;
 }
 
 .Subtitulo1{
@@ -32,4 +43,15 @@ font-family: 'arial', serif;
   font-weight: bold;
     font-family: 'Helvetuca','Verdana','Monaco',sans-sans-serif;
     color: yellow;
+}
+
+.btnAyuda{
+  margin-top: 10px;
+  padding: 6px 25px;
+  background: #373E4A;
+  color: #ffcc00;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
 }

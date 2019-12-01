@@ -21,7 +21,8 @@ $Sentencia_sql="select inventario_armas_nombre from inventario_armas where inven
 $resultado = conectar($Sentencia_sql);
 
 if(mysqli_num_rows($resultado) > 0){
-  echo "usted ya tiene esa arma";
+  include_once 'verArma.php';
+  echo $_SESSION["con_arma"];
 }else if ($dinero < $precioArma){
 
     echo "usted no tiene suficiente dinero para comprar este Item";
@@ -46,6 +47,3 @@ echo "resultado es " . $resultado;
 
 }
 ?>
-<!DOCTYPE html>
-<div><a href="/Juego/Tienda/tienda.php" >volver</a></div>
-</html>
