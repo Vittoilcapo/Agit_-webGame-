@@ -8,9 +8,10 @@ include_once('../Tienda/connectBD.php');
     <meta charset="utf-8">
     <title>Peleadores</title>
     <link rel="stylesheet" href="estilo_pelea.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet" >
   </head>
     <header>
-      <h1 style="text-align: center">Eliga contra quien quiere pelear</h1>
+      <p>Elija contra quien quiere pelear</p>
   </header>
   <body>
 

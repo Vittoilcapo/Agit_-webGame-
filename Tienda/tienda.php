@@ -36,24 +36,14 @@
     <meta charset="utf-8">
     <title>Tienda</title>
     <link rel="stylesheet" href="estilo-tienda.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet" >
   </head>
-    <header>
       <div class="titulo">
-        <img src="img/letra.png">
+        <p id="letratitulo">Tienda</p>
       </div>
-      <div class="precio">
-
-        <h2>
-        <?php
-
-        echo $_SESSION['ClaseUsuario']->usuario_dinero;
-        ?>
-
-        <div class="coinimagen"><img src="img/moneda.png" width="30" height="30"></div>
-      </h2>
-      </div>
-
-  </header>
+    <header>
+      <div id="coinDiv"><img src="img/moneda.png" id="coin"><?php echo $_SESSION['ClaseUsuario']->usuario_dinero; ?></div>
+    </header>
   <body>
 
     <div class="contenedor">
@@ -74,17 +64,16 @@
        <div class="lanza"><input type="radio" name="armas" value="Lanza"></div>
 
     </div>
-    <div class= "comprar" style="text-align: center">
-    <input class="btnVer" type="submit" name="comprar" value="Ver">
-    </div>
+    <div class="botones">
+
+      <input class="btnVer" type="submit" name="comprar" value="Ver">
     </form>
-    <center>
-    <form method="post" action="comprarskin.php">
-    <input class="btnSkins" type="submit" value="Comprar skin"/>
-  </form>
+
+      <form method="post" action="comprarskin.php">
+          <input class="btnSkins" type="submit" value="Comprar skin"/>
+          <button class="enlace" role="link" onclick="location.href='../Menu/menu.php'">Volver</button>
+      </form>
+  </div>
   </body>
-  <footer>
-     <button class="enlace" role="link" onclick="location.href='../Menu/menu.php'">Volver</button>
-  </footer>
-</center>
+
 </html>

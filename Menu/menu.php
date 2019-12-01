@@ -4,27 +4,6 @@ session_start();
 
 include_once("../Tienda/connectBD.php");
 
-$usuario_id = $_SESSION['ClaseUsuario']->usuario_id;
-
-
-$sql2="select usuario_nivel from usuario where usuario_id=$usuario_id;";
-$resultado=conectar($sql2);
-
-while ($mostrar2=mysqli_fetch_array($resultado)){
-  $nivel=$mostrar2[0];
-  echo "Nivel: ".$nivel;
-}
-echo "<br>";
-
-$sql="select puntosParaNivel from usuario where usuario_id=$usuario_id;";
-$resultado=conectar($sql);
-
-while ($mostrar=mysqli_fetch_array($resultado)){
-  $puntosNivel=$mostrar[0];
-  echo "Progreso: ".$puntosNivel."/1000";
-}
-
-
 ?>
 
 
@@ -34,11 +13,36 @@ while ($mostrar=mysqli_fetch_array($resultado)){
     <meta charset="utf-8">
     <title>Menú</title>
     <link rel="stylesheet" href="estilos_menu.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet" >
     <center>
 
 </center>
   </head>
   <body>
+    <div class="nivel">
+      <?php
+      $usuario_id = $_SESSION['ClaseUsuario']->usuario_id;
+
+
+      $sql2="select usuario_nivel from usuario where usuario_id=$usuario_id;";
+      $resultado=conectar($sql2);
+
+      while ($mostrar2=mysqli_fetch_array($resultado)){
+        $nivel=$mostrar2[0];
+        echo "Nivel: ".$nivel;
+      }
+      echo "<br>";
+
+      $sql="select puntosParaNivel from usuario where usuario_id=$usuario_id;";
+      $resultado=conectar($sql);
+
+      while ($mostrar=mysqli_fetch_array($resultado)){
+        $puntosNivel=$mostrar[0];
+        echo "Progreso: ".$puntosNivel."  /  1000";
+      }
+      ?>
+
+    </div>
 <center>
   <div class="contenedor_menu">
     <div>

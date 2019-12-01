@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Permanent Marker', cursive;
+  font-size: Normal;
+}
+
  .estilo_login {
    margin: auto;
    padding: 0px;
@@ -90,7 +95,11 @@ body{
   margin: auto;
   bottom: -160px;
   width: 200px;
+<<<<<<< HEAD
   height: 430px;
+=======
+  height: 360px;
+>>>>>>> 6aff9c1c14664383249146e123cf04c6a8b78806
   border-radius: 0.35em;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -105,4 +114,14 @@ body{
     font-size: 22px;
     color: #373b3d;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nivel{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  color:#ffcc00;
+  font-family: 'Permanent Marker';
+  font-size: 30px;
+
 }
