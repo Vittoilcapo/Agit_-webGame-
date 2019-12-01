@@ -29,11 +29,16 @@ class InventarioArmas{
       <th>Fuerza</th>
       <th>Agilidad</th>
       <th>Arma por defecto</th>
+
     </tr>
 
     <?php
 
-    while ($inventario = mysqli_fetch_array($resultado)){?>
+    while ($inventario = mysqli_fetch_array($resultado)){
+
+
+      ?>
+
       <div class="Armas">
         <div class = "imagenesArmas"> <img src="<?php echo $inventario["imagen"]; ?>"> </div>
       </div>
@@ -52,17 +57,53 @@ echo "<td>"; echo $inventario["velocidad"]; echo "</td>";
 echo "<td>"; echo $inventario["fuerza"]; echo "</td>";
 echo "<td>"; echo $inventario["agilidad"]; echo "</td>";
 
-    //    echo "<input type='radio' name='armasDefault' id='checkboxes' onClick=foo('".$inventario["inventario_armas_nombre"]."') >";
+    //  echo "<input type='radio' name='armasDefault' id='checkboxes' onClick=foo('".$inventario["inventario_armas_nombre"]."') >";
 
-        echo "<td><a href='wea.php?nomArma=" . $inventario['nombre']."&&id=".$inventario["id"] ."'><input class='btnElegir' type='button' value='Elija arma' name='armasDefault'></a></td>";
+    //  $nombre = $inventario_arma_default['nombre'];
+
+
+  //    echo "<td><img src='img/confirmacionArma.jpg'></td>";
+  $sql_arma_default="select *
+  from inventario_armas where armasDefault=1 and inventario_id=" . $id_inventario . " and inventario_armas_nombre='" . $inventario["nombre"] ."';";
+
+    $resularmaDefault = conectar($sql_arma_default);
+
+
+    $imagen=false;
+  while ($inventario_arma_default = mysqli_fetch_array($resularmaDefault)){
+$imagen=true;
+//echo "verdadero";
+echo "<td><center><img src='img/confirmacionArma.png'></center></td>";
+//echo "<td></td>";
+}
+$sql_boton="select *
+from inventario_armas where armasDefault!=1 and inventario_id=" . $id_inventario . " and inventario_armas_nombre='" . $inventario["nombre"] ."';";
+
+  $resulboton = conectar($sql_boton);
+
+  while ($boton = mysqli_fetch_array($resulboton)){
+    echo "<td><a href='wea.php?nomArma=" . $inventario['nombre']."&&id=".$inventario["id"] ."'><input class='btnElegir' type='button' value='Equipar' name='armasDefault'></a></td>";
+
+  }
+
+  /*
+  if($resularmaDefault){
+//    echo "<td><img src='img/confirmacionArma.jpg'></td>";
+
+  }
+*/
+
+
+
+
+
 
         ?>
       </div>
       <?php
 
     echo "</tr>";
-
-    }
+}
 
 
     ?>
@@ -76,14 +117,16 @@ echo "<td>"; echo $inventario["agilidad"]; echo "</td>";
 <?php
 
 }
-
 }
 
 
 
-$_SESSION['armaxdef'] = "<p class='error2'>Modificado con exito</p>";
+$_SESSION['modificado'] = "<p class='modificadocss'>Modificado con éxito</p>";
+
+
 
 
  ?>
 </body>
+
 </html>

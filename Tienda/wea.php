@@ -3,7 +3,9 @@
 <?php
 session_start();
 include_once('connectBD.php');
-include 'inventarioUsuario.php';
+include_once 'inventarioUsuario.php';
+//echo $_SESSION['modificado'];
+
 //$nombre_arma = $_GET['inventarioNombre'];
 
 /*
@@ -40,14 +42,21 @@ $mostrar["nombre"],$mostrar["id"],$mostrar["arma"]
 }
 
 //$modificar="update `juego`.`inventario_armas` SET `armasdefault` =0 WHERE (`inventario_id`=8) and (`inventario_armas_nombre` = 'Hacha');";
+
+
   $modificar="update inventario_armas set armasdefault=1 where inventario_armas_nombre='" . $consulta[0] . "' and inventario_id=" . $consulta[1] . ";";
   conectar($modificar);
 
 $modificar2="update inventario_armas set armasdefault=0 where inventario_armas_nombre!='" . $consulta[0] . "' and inventario_id=" . $consulta[1] . ";";
 conectar($modificar2);
-
+//include_once 'inventarioUsuario.php';
+//include_once ("inventarioUsuario.php");
 include_once 'inventarioUsuario.php';
-echo $_SESSION['armaxdef'];
+//$_SESSION['modificado'] = "<p class='modificadocss'>Modificado con éxito</p>";
+  echo $_SESSION['modificado'];
+
+
+//  $_SESSION['modificado'] = "<p class='modificado'>Modificado con éxito</p>";
 
 
 /*
