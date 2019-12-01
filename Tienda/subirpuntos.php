@@ -41,13 +41,22 @@ echo "</tr>";
 <form method="post" action="validarsubirpuntos.php">
 <br>
 Fuerza
-<input type="text" name="ingresa_fuerza">
+<input type="number" name="ingresa_fuerza" value="0">
 <br>
 Velocidad
-<input type="text" name="ingresa_velocidad">
+<input type="number" name="ingresa_velocidad" value="0">
 <br>
 Agilidad
-<input type="text" name="ingresa_agilidad">
-<input type="submit" value="ingresar">
+<input type="number" name="ingresa_agilidad" value="0">
+<input type="submit" value="ingresar" name="btnIngresar">
 
 </form>
+<?php
+/*
+if (trim($_POST['ingresa_fuerza']="") or trim($_POST['ingresa_agilidad']="") or trim($_POST['ingresa_velocidad']="")){
+  ?>
+  <script>
+  alert("no puede dejar campos vacios");
+  window.location="subirpuntos.php";
+  </script>
+<?php } */?>

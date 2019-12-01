@@ -8,6 +8,24 @@ include_once("../Tienda/connectBD.php");
 $usuario_id = $_SESSION['ClaseUsuario']->usuario_id;
 
 
+if (isset($_POST['btnIngresar'])){
+  if(trim($_REQUEST['ingresa_fuerza'])=="" or trim($_REQUEST['ingresa_agilidad'])=="" or trim($_REQUEST['ingresa_velocidad'])==""){
+
+
+  ?>
+  <script>
+  alert("no puede dejar campos vacios");
+  window.location="subirpuntos.php";
+  </script>
+<?php
+}else{
+echo "puede ingresar";
+
+}
+
+}
+
+
 $sql="select puntoDisponibles from estadisticas where usuario_id=$usuario_id;";
 $resultado=conectar($sql);
 
@@ -57,7 +75,6 @@ $resultado= conectar($sql1);
 $sql3="update `juego`.`estadisticas` SET `puntoDisponibles` =$quedan WHERE (`usuario_id`=$usuario_id)";
 $resultado= conectar($sql3);
 }
-
 
 
 
