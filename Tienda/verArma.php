@@ -79,12 +79,17 @@ if (isset($_POST['armas'])) {
           <div>
             <button class="enlace1" role="link" onclick="location.href='InsertArmasInventario.php?precio='+<?php echo $precio ?>">Comprar</button>
          </div>
+         <footer><button class="enlace" role="link" onclick="location.href='../Tienda/tienda.php'">Volver</button></footer>
+         <?php
+       $_SESSION["con_arma"]="<p>Usted ya compró esta arma</p>";
 
+          ?>
   </body>
-  <footer><button class="enlace" role="link" onclick="location.href='../Tienda/tienda.php'">Volver</button></footer>
+
 </html>
 <?php }else {
 
   echo "<script language=JavaScript> alert('Debe de seleccionar un arma.'); window.location.href = 'tienda.php';</script>";
 
-} ?>
+}
+?>

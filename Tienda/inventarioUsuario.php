@@ -22,6 +22,7 @@ class InventarioArmas{
 
     <link rel="stylesheet" href="estilo_Inventario.css">
     <body>
+
     <table class="grid-itemEstadisticas">
     <tr>
       <th>Nombre</th>
@@ -83,7 +84,7 @@ from inventario_armas where armasDefault!=1 and inventario_id=" . $id_inventario
 
   while ($boton = mysqli_fetch_array($resulboton)){
     echo "<td><a href='wea.php?nomArma=" . $inventario['nombre']."&&id=".$inventario["id"] ."'><input class='btnElegir' type='button' value='Equipar' name='armasDefault'></a></td>";
-
+//echo "<td><input type='button' class='btnElegir' href='wea.php?nomArma=" . $inventario['nombre']."&&id=".$inventario["id"] ."' value='Equipar'></td>";
   }
 
   /*
@@ -121,12 +122,13 @@ from inventario_armas where armasDefault!=1 and inventario_id=" . $id_inventario
 
 
 
-$_SESSION['modificado'] = "<p class='modificadocss'>Modificado con éxito</p>";
+$mensaje = "<p class='modificadocss'>Modificado con éxito</p>";
 
 
 
 
  ?>
+
 </body>
 
 </html>
