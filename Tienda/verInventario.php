@@ -41,6 +41,6 @@ $inventario-> obtenerInventario($_SESSION['id_inventario']);
 //echo $_SESSION['modificado'];
     ?>
    <footer>
-     <button class="enlace" role="link" onclick="location.href='../Menu/menu.html'">Volver</button>
+     <button class="enlace" role="link" onclick="location.href='../Menu/menu.php'">Volver</button>
    </footer>
  </html>
