@@ -19,7 +19,7 @@ $sql="insert into `juego`.`estadisticas` (`usuario_mail`, `estadisticas_velocida
 
 if (mysqli_query($conexion, $sql)) {
       echo "Registrado correctamente";
-      header('Location: menu.html');
+      header('Location: menu.php');
 }else{
       echo "Error: " . "<br>" . "Error al registrarte";
 }

@@ -45,5 +45,5 @@ include_once('../Tienda/connectBD.php');
     </form>
 
   </body>
-  <footer><a href="/Juego/Menu/menu.html"> </a></footer>
+  <footer><a href="/Juego/Menu/menu.php"> </a></footer>
 </html>
